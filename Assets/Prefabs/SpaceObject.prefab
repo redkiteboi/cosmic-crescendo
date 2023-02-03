@@ -31,7 +31,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2511867519278514969}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -108,5 +109,100 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 951504cebd084e14fa548b4c55c8165a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mass: 1
+  range: 1
+  circle: {fileID: 2511867519278514971}
+--- !u!1001 &8237267296313767529
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4356292400272766388}
+    m_Modifications:
+    - target: {fileID: 5803825753200620909, guid: be5257d1fc9f85641b7f9d4a713a9185,
+        type: 3}
+      propertyPath: m_Name
+      value: RangeCircle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803825753200620912, guid: be5257d1fc9f85641b7f9d4a713a9185,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803825753200620912, guid: be5257d1fc9f85641b7f9d4a713a9185,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803825753200620912, guid: be5257d1fc9f85641b7f9d4a713a9185,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803825753200620912, guid: be5257d1fc9f85641b7f9d4a713a9185,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803825753200620912, guid: be5257d1fc9f85641b7f9d4a713a9185,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803825753200620912, guid: be5257d1fc9f85641b7f9d4a713a9185,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803825753200620912, guid: be5257d1fc9f85641b7f9d4a713a9185,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803825753200620912, guid: be5257d1fc9f85641b7f9d4a713a9185,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803825753200620912, guid: be5257d1fc9f85641b7f9d4a713a9185,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803825753200620912, guid: be5257d1fc9f85641b7f9d4a713a9185,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803825753200620912, guid: be5257d1fc9f85641b7f9d4a713a9185,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803825753200620914, guid: be5257d1fc9f85641b7f9d4a713a9185,
+        type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1655152955113421758}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: be5257d1fc9f85641b7f9d4a713a9185, type: 3}
+--- !u!4 &2511867519278514969 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5803825753200620912, guid: be5257d1fc9f85641b7f9d4a713a9185,
+    type: 3}
+  m_PrefabInstance: {fileID: 8237267296313767529}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2511867519278514971 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5803825753200620914, guid: be5257d1fc9f85641b7f9d4a713a9185,
+    type: 3}
+  m_PrefabInstance: {fileID: 8237267296313767529}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373113dda7e3f1c4d85fdccb8a9727a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
