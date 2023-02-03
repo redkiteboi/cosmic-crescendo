@@ -32,10 +32,16 @@ public class GameMaster : MonoBehaviour
             return false;
         }
 
-        Vector3 position = Vector3.Lerp(object1.transform.position, object2.transform.position, 0.5f);
+        float massSum = object1.mass + object2.mass;
+        float distance = object2.mass / massSum;
+
+        Vector3 position = Vector3.Lerp(object1.transform.position, object2.transform.position, distance);
+        float mass = object1.mass + object2.mass;
         Destroy(object1.gameObject);
         Destroy(object2.gameObject);
-        Instantiate(instance.spaceObject, position, object1.transform.rotation);
+
+        SpaceObject newObject = Instantiate(instance.spaceObject, position, object1.transform.rotation);
+        newObject.transform.localScale *= mass;
         return true;
     }
 }

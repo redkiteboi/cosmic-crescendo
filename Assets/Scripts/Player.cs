@@ -25,10 +25,12 @@ public class Player : MonoBehaviour
         {
             case InputActionPhase.Performed:
                 selectedObjects[0] = s;
+                if (s == null) return;
                 Debug.Log("Pressed on " + s.gameObject.name);
                 break;
             case InputActionPhase.Canceled:
                 selectedObjects[1] = s;
+                if (s == null) return;
                 Debug.Log("Released on " + s.gameObject.name);
                 GameMaster.MergePlanets(selectedObjects);
                 break;
