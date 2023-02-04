@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
 
     public void Click(CallbackContext ctx)
     {
+        if (GameMaster.GetPaused()) return;
         SpaceObject s = DetectSpaceObject();
         switch (ctx.phase)
         {

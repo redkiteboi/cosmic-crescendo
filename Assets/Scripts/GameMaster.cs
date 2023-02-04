@@ -49,6 +49,12 @@ public class GameMaster : MonoBehaviour
         if (instance != null) instance.isPaused = pause;
     }
 
+    public static bool GetPaused()
+    {
+        if (instance != null) return instance.isPaused;
+        else return true;
+    }
+
     public void RegisterPlanet(SpaceObject object1)
     {
         spaceObjects.Add(object1);
