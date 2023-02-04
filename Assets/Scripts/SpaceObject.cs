@@ -40,6 +40,11 @@ public class SpaceObject : MonoBehaviour
     private void DrawCircle(int corners, float radius)
     {
         renderer.positionCount = corners;
+
+        float width = 0.025f;
+        renderer.startWidth = width;
+        renderer.endWidth = width;
+
         for (int i = 0; i < corners; i++)
         {
             float circumference = (float)i / corners;

@@ -16,6 +16,7 @@ public class GameMaster : MonoBehaviour
     private ArrayList spaceObjects = new ArrayList();
 
     [SerializeField] private int currentLayer = 0;
+    [SerializeField] private float lineWidth = 0.06f;
     [SerializeField] private int[] layerRequirements = new int[5];
     [SerializeField] private float[] layerDistance = new float[5];
 
@@ -123,5 +124,15 @@ public class GameMaster : MonoBehaviour
     private void AdjustCam(float distance)
     {
         cam.goalPos -= cam.transform.forward * distance;
+    }
+
+    public static float GetLineWidth()
+    {
+        if (instance) return instance.lineWidth;
+        else
+        {
+            Debug.LogError("No instance of GameMaster found!");
+            return 0;
+        }
     }
 }
