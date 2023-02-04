@@ -19,7 +19,7 @@ public class GameMaster : MonoBehaviour
     [SerializeField] private int currentLayer = 0;
     [SerializeField] private float lineWidth = 0.06f;
     [SerializeField] private int[] layerRequirements = new int[5];
-    [SerializeField] private float[] layerDistance = new float[5];
+    [SerializeField] private Vector3[] layerCamPos = new Vector3[6];
 
     private void Awake()
     {
@@ -29,6 +29,11 @@ public class GameMaster : MonoBehaviour
             Debug.LogWarning(string.Format("Second GameMaster instance detected. Deleting {0}!", gameObject.name));
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        cam.goalPos = layerCamPos[0];
     }
 
     public void RegisterPlanet(SpaceObject object1)
@@ -91,12 +96,11 @@ public class GameMaster : MonoBehaviour
         SpawnNewPlanet(object1, object2);
         
         mergeCount++;
-        AdjustCam(1);
         if (mergeCount >= layerRequirements[currentLayer])
         {
             mergeCount = 0;
-            AdjustCam(layerDistance[currentLayer]);
-            audioManager.SetLayer(++currentLayer);
+            AdjustCam(layerCamPos[++currentLayer]);
+            audioManager.SetLayer(currentLayer);
         }
     }
 
@@ -138,9 +142,9 @@ public class GameMaster : MonoBehaviour
         mergePoof.Play();
     }
 
-    private void AdjustCam(float distance)
+    private void AdjustCam(Vector3 pos)
     {
-        cam.goalPos -= cam.transform.forward * distance;
+        cam.goalPos = pos;
     }
 
     public static float GetLineWidth()

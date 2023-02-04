@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class MainCam : MonoBehaviour
 {
-    [SerializeField] public Vector3 goalPos;
+    [SerializeField][ContextMenuItem("Look at Vector3.zero", "OnValidate")] public Vector3 goalPos;
     [SerializeField][Range(0f, 1f)] private float camSpeed = 0.025f;
 
     private void Start()
     {
-        goalPos = transform.position;
         StartCoroutine(Animate());
+    }
+
+    private void OnValidate()
+    {
+        transform.LookAt(Vector3.zero);
     }
 
     private IEnumerator Animate()
