@@ -53,6 +53,7 @@ MonoBehaviour:
   part2: {fileID: 5880716617034388684}
   part3: {fileID: 6170254654905730921}
   part4: {fileID: 8689931273569309237}
+  part5: {fileID: 7741786881464548057}
   audioMixer: {fileID: 24100000, guid: e693a069cb2f03249adbc8cbfb2de362, type: 2}
 --- !u!1001 &458811320329572919
 PrefabInstance:
@@ -450,6 +451,12 @@ PrefabInstance:
 --- !u!4 &4732048444288155766 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7645012302238424964, guid: fff80737aa23c544db5b678dceacb348,
+    type: 3}
+  m_PrefabInstance: {fileID: 3148885655792508914}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &7741786881464548057 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4666658252487714091, guid: fff80737aa23c544db5b678dceacb348,
     type: 3}
   m_PrefabInstance: {fileID: 3148885655792508914}
   m_PrefabAsset: {fileID: 0}
