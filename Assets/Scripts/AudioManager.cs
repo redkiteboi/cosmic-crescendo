@@ -28,13 +28,13 @@ public class AudioManager : MonoBehaviour
     void Update()
     {
         
-        StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part1_vol",  2.0f, 1.0f));
+        StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part1_vol",  5.0f, 1.0f));
         
-        StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part2_vol",  2.0f, 1.0f));
+        //StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part2_vol",  2.0f, 1.0f));
         
-        StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part3_vol",  2.0f, 1.0f));
+        //StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part3_vol",  2.0f, 1.0f));
         
-        StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part4_vol",  2.0f, 1.0f));
+       // StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part4_vol",  2.0f, 1.0f));
         
     }
 }
