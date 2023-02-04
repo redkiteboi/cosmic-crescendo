@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SunMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: 16c29d89a8f7b224e9541944f3ccca65,
+  m_Name: GasGiant
+  m_Shader: {fileID: -6465566751694194690, guid: 3b7836a28a3fea54eb8a7440b570f2ad,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -21,6 +21,18 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _SampleTexture2D_0084ec855f9b4210adb2c42bde9847e3_Texture_1:
+        m_Texture: {fileID: 2800000, guid: f3f9957a5e176e54594ae88f9818fb77, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_c4c46f44e8074bd593eb7b12eae50e42_Texture_1:
+        m_Texture: {fileID: 2800000, guid: f3f9957a5e176e54594ae88f9818fb77, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_da7d37a9a9ac4ba2802af48089bff4fa_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 5752c393e9f1d7e4a8529b98700d092a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -35,16 +47,19 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CellDensity: 13
-    - _Cellspeed: 1
+    - _Feature_Strength: 0.75
+    - _Lines: 1.04
+    - _Noise: 0.21
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SolarFlare: -0.92
+    - _spinspeed: 1
     m_Colors:
-    - _BaseColor: {r: 2.270603, g: 0.56114256, b: 0.16643155, a: 0}
-    - _CellColor: {r: 3.2111173, g: 0.58982074, b: 0.21855776, a: 0}
+    - _AthmoColor: {r: 0.405311, g: 0.41568628, b: 0, a: 0}
+    - _AtmoColor: {r: 0.41568628, g: 0.28994793, b: 0, a: 0}
+    - _BaseColor: {r: 0.7264151, g: 0.4836586, b: 0.25698647, a: 0}
+    - _FeatureColor: {r: 1, g: 0.75097024, b: 0.34509802, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &6807633506519340966
+--- !u!114 &3717923041597483130
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
