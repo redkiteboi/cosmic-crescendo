@@ -33,7 +33,8 @@ public class GameMaster : MonoBehaviour
         }
 
         float distance = Vector3.Distance(object1.transform.position, object2.transform.position);
-        if (object1.mass * object1.range * object1.transform.localScale.x < distance && object2.mass * object2.mass * object2.transform.localScale.x < distance) return false;
+        int a = 0;
+        if (object1.mergeRange < distance && object2.mergeRange < distance) return false;
 
         float massSum = object1.mass + object2.mass;
         float relDist = object2.mass / massSum;

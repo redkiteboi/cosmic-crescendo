@@ -309,5 +309,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mass: 1
-  range: 1
+  rangeMulti: 1
   renderer: {fileID: 4033336222014423642}
