@@ -13,6 +13,8 @@ public class GameMaster : MonoBehaviour
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private VisualEffect poofEffect;
     [SerializeField] private int mergeCount = 0;
+    [SerializeField] private bool isPaused = true;
+    [SerializeField] private float introTimer = 3f;
 
     private ArrayList spaceObjects = new ArrayList();
 
@@ -33,6 +35,18 @@ public class GameMaster : MonoBehaviour
     private void Start()
     {
         cam.goalPos = layerCamPos[0];
+        StartCoroutine(IntroSequence());
+    }
+
+    private IEnumerator IntroSequence()
+    {
+        yield return new WaitForSeconds(introTimer);
+        isPaused = false;
+    }
+
+    public static void SetPaused(bool pause)
+    {
+        if (instance != null) instance.isPaused = pause;
     }
 
     public void RegisterPlanet(SpaceObject object1)
@@ -54,6 +68,8 @@ public class GameMaster : MonoBehaviour
             Debug.LogError("No GameMaster has been established yet!");
             return false;
         }
+
+        if (instance.isPaused) return false;
 
         if (object1.isMerging || object2.isMerging) return false;
 
