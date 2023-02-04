@@ -81,6 +81,7 @@ public class GameMaster : MonoBehaviour
         SpaceObject newObject = Instantiate(instance.spaceObject, position, object1.transform.rotation);
         newObject.mass = massSum;
         newObject.volume = volumeSum;
+        newObject.isOriginal = false;
         newObject.GetComponent<Renderer>().material = mat;
     }
 }
