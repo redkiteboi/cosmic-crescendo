@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class plantemagnet : MonoBehaviour
 {
@@ -12,31 +14,54 @@ public class plantemagnet : MonoBehaviour
     [SerializeField] private float velocity;
     [SerializeField] float besch = 0.0f;
     private Vector3 begpos;
+    private Collider col;
     
     void Start()
     {
        begpos = transform.position;
-       if (GetComponent<Renderer>() != null)
+       if (GetComponent<Renderer>() != null && GetComponent<Shader>().GetType().Namespace != "Universe" )
        {
            RandomizeMaterial();
        }
-        /*
-        go = GetComponent<GameObject>();
-    */
+
+       col = GetComponent<Collider>();
+       /*
+       go = GetComponent<GameObject>();
+   */
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate() 
     {
         Vector3 pos = transform.position;
 
-        Vector3 endpos = new Vector3(-5.7f,0.0f,-57.3f);
+        Vector3 target = new Vector3(-5.7f,0.0f,-57.3f);
+        /*
+        Vector3 actualendpos = new Vector3(15.72507f,20.7f,-62.50652f);
+        */
         
-        
-        transform.position = Vector3.MoveTowards(pos, endpos, velocity + besch );
+        transform.position = Vector3.MoveTowards(pos, target, velocity + besch);
         besch = +besch+0.0001f;
+        Vector3 newPos = transform.position;
 
-      
+        /*Collider col = GetComponent<Collider>();
+        if ()
+        {
+            Destroy(this);
+        }*/
+        /*
+        Debug.Log("I was here2");
+        */
+
+    }
+    
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("I was here");
+
+        Destroy(this);
+
     }
 
     public void RandomizeMaterial()
