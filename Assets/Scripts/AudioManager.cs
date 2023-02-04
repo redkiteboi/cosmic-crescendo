@@ -6,6 +6,7 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
+    [SerializeField] public int currentLayer = 0;
 
     [SerializeField] private AudioSource part1;
     [SerializeField] private AudioSource part2;
