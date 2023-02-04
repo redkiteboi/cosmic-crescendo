@@ -16,7 +16,10 @@ public class plantemagnet : MonoBehaviour
     void Start()
     {
        begpos = transform.position;
-       RandomizeMaterial();
+       if (GetComponent<Renderer>() != null)
+       {
+           RandomizeMaterial();
+       }
         /*
         go = GetComponent<GameObject>();
     */
