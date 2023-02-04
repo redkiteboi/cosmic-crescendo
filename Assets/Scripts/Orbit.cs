@@ -24,6 +24,7 @@ public class Orbit : MonoBehaviour
     public void RemoveObject(SpaceObject object1)
     {
         children.Remove(object1);
+        if (children.Count <= 0) Destroy(gameObject);
     }
 
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class GameMaster : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class GameMaster : MonoBehaviour
     [SerializeField] private MainCam cam;
     [SerializeField] private SpaceObject defaultObj;
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private VisualEffect poofEffect;
     [SerializeField] private int mergeCount = 0;
 
     private ArrayList spaceObjects = new ArrayList();
@@ -48,6 +50,8 @@ public class GameMaster : MonoBehaviour
         }
 
         if (object1.isMerging || object2.isMerging) return false;
+
+        if (object1.GetComponentInChildren<Orbit>() != null || object2.GetComponentInChildren<Orbit>() != null) return false;
 
         float distance = Vector3.Distance(object1.transform.position, object2.transform.position);
         if (object1.mergeRange < distance && object2.mergeRange < distance) return false;
@@ -110,6 +114,10 @@ public class GameMaster : MonoBehaviour
         newObject.volume = volumeSum;
         newObject.isOriginal = false;
         newObject.GetComponent<Renderer>().material = mat;
+
+        VisualEffect mergePoof = Instantiate(poofEffect, newObject.transform);
+        mergePoof.SetFloat("Scaling", volumeSum);
+        mergePoof.Play();
     }
 
     private void AdjustCam(float distance)
