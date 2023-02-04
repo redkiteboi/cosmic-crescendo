@@ -7,7 +7,7 @@ public class GameMaster : MonoBehaviour
 {
     private static GameMaster instance;
 
-    [SerializeField] private MainCam cam;
+    [SerializeField] public MainCam cam;
     [SerializeField] private SpaceObject defaultObj;
     [SerializeField] private SpaceObject defaultGalaxy;
     [SerializeField] private AudioManager audioManager;
@@ -17,7 +17,6 @@ public class GameMaster : MonoBehaviour
     private ArrayList spaceObjects = new ArrayList();
 
     [SerializeField] private int currentLayer = 0;
-    [SerializeField] private float lineWidth = 0.06f;
     [SerializeField] private int[] layerRequirements = new int[5];
     [SerializeField] private Vector3[] layerCamPos = new Vector3[6];
 
@@ -147,13 +146,4 @@ public class GameMaster : MonoBehaviour
         cam.goalPos = pos;
     }
 
-    public static float GetLineWidth()
-    {
-        if (instance) return instance.lineWidth;
-        else
-        {
-            Debug.LogError("No instance of GameMaster found!");
-            return 0;
-        }
-    }
 }

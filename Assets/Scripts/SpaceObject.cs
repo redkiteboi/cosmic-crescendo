@@ -42,7 +42,7 @@ public class SpaceObject : MonoBehaviour
     {
         renderer.positionCount = corners;
 
-        float width = 0.025f;
+        float width = Vector3.Distance(Camera.main.transform.position, Vector3.zero) * 0.00625f;
         renderer.startWidth = width;
         renderer.endWidth = width;
 
@@ -59,6 +59,7 @@ public class SpaceObject : MonoBehaviour
 
     public void Select()
     {
+        DrawCircle(100, mass);
         StopCoroutine(ringFadeAnim);
         StartCoroutine(AnimateFade(1));
     }
