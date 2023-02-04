@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
                 break;
             case InputActionPhase.Canceled:
                 selectedObjects[1] = s;
-                selectedObjects[0].Deselect();
+                if (selectedObjects[0] != null) selectedObjects[0].Deselect();
                 if (s == null) return;
                 GameMaster.MergePlanets(selectedObjects);
                 break;
