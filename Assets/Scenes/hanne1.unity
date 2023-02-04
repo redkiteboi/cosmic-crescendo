@@ -9203,6 +9203,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2318025953606404345, guid: c387835c256bfa94f81bb3774f40b680,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318025953606404345, guid: c387835c256bfa94f81bb3774f40b680,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318025953606404345, guid: c387835c256bfa94f81bb3774f40b680,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5324946507263393337, guid: c387835c256bfa94f81bb3774f40b680,
         type: 3}
       propertyPath: m_Name
