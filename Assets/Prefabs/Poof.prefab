@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 846ce951bd8945649b8b1f9f13929847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 4
+  timer: 5
 --- !u!1 &7563884335267578447
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,6 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7193675286928212138}
   - component: {fileID: 6920683301245060351}
+  - component: {fileID: 4417334863992443000}
   m_Layer: 0
   m_Name: impact
   m_TagString: Untagged
@@ -257,3 +258,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4417334863992443000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7563884335267578447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e4d5ec8730c6bb498047fb964552129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
