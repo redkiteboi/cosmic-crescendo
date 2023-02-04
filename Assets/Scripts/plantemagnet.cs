@@ -16,7 +16,7 @@ public class plantemagnet : MonoBehaviour
     void Start()
     {
        begpos = transform.position;
-       if (GetComponent<Renderer>() != null)
+       if (GetComponent<Renderer>() != null && GetComponent<Shader>().GetType().Namespace != "Universe" )
        {
            RandomizeMaterial();
        }
@@ -26,7 +26,7 @@ public class plantemagnet : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate() 
     {
         Vector3 pos = transform.position;
 
