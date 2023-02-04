@@ -39,10 +39,10 @@ Material:
     - _Cellspeed: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SolarFlare: 2
+    - _SolarFlare: -0.92
     m_Colors:
-    - _BaseColor: {r: 0.6886792, g: 0.5097625, b: 0.10720008, a: 0}
-    - _CellColor: {r: 2.2308197, g: 1.527773, b: 1.3153418, a: 0}
+    - _BaseColor: {r: 2.270603, g: 0.61368567, b: 0.15454368, a: 0}
+    - _CellColor: {r: 3.2111173, g: 0.67392457, b: 0.2017456, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6807633506519340966
 MonoBehaviour:

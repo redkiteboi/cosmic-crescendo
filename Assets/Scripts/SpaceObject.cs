@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SpaceObject : MonoBehaviour
 {
+    [SerializeField] public float volume = 1f;
     [SerializeField] public float mass = 1f;
-    [SerializeField] public float rangeMulti = 1f;
 
     public float mergeRange { get; private set; }
 
@@ -14,13 +14,23 @@ public class SpaceObject : MonoBehaviour
     private void Start()
     {
         OnValidate();
+        Material m = GetComponent<Renderer>().material;
+        Debug.Log(m.shader.name);
+        switch (m.shader.name)
+        {
+            case "Shader Graphs/PlanetShader":
+                Debug.Log("Planeto");
+                m.SetColor("_Color", Random.ColorHSV());
+                m.SetColor("_AtmoColor", Random.ColorHSV());
+                break;
+        }
     }
 
     private void OnValidate()
     {
-        transform.localScale = new Vector3(mass, mass, mass);
-        mergeRange = mass * rangeMulti * transform.localScale.x;
-        DrawCircle(100, mass * rangeMulti);
+        transform.localScale = new Vector3(volume, volume, volume);
+        mergeRange = mass;
+        DrawCircle(100, mass);
     }
 
     private void DrawCircle(int corners, float radius)
@@ -30,8 +40,8 @@ public class SpaceObject : MonoBehaviour
         {
             float circumference = (float)i / corners;
             float radian = circumference * 2 * Mathf.PI;
-            float x = Mathf.Cos(radian) * radius;
-            float z = Mathf.Sin(radian) * radius;
+            float x = Mathf.Cos(radian) * radius / transform.localScale.x;
+            float z = Mathf.Sin(radian) * radius / transform.localScale.x;
             Vector3 pos = new Vector3(x, 0, z);
             renderer.SetPosition(i, pos);
         }

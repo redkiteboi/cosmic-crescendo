@@ -21,6 +21,7 @@ public class GameMaster : MonoBehaviour
     public static bool MergePlanets(SpaceObject[] objects)
     {
         if (objects[0] == null || objects[1] == null) return false;
+        if (objects[0] == objects[1]) return false;
         return MergePlanets(objects[0], objects[1]);
     }
 
@@ -70,6 +71,8 @@ public class GameMaster : MonoBehaviour
     {
         float massSum = object1.mass + object2.mass;
         float relDist = object2.mass / massSum;
+        float volumeSum = object1.volume + object2.volume;
+        Material mat = object1.mass >= object2.mass ? object1.GetComponent<Renderer>().material : object2.GetComponent<Renderer>().material;
 
         Vector3 position = Vector3.Lerp(object1.transform.position, object2.transform.position, relDist);
         Destroy(object1.gameObject);
@@ -77,5 +80,7 @@ public class GameMaster : MonoBehaviour
 
         SpaceObject newObject = Instantiate(instance.spaceObject, position, object1.transform.rotation);
         newObject.mass = massSum;
+        newObject.volume = volumeSum;
+        newObject.GetComponent<Renderer>().material = mat;
     }
 }
