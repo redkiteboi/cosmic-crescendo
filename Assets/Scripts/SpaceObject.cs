@@ -12,6 +12,12 @@ public class SpaceObject : MonoBehaviour
     public bool isMerging = false;
 
     [SerializeField] private new LineRenderer renderer;
+    private IEnumerator ringFadeAnim;
+
+    private void Awake()
+    {
+        ringFadeAnim = AnimateFade(0f);
+    }
 
     private void Start()
     {
@@ -38,6 +44,33 @@ public class SpaceObject : MonoBehaviour
             Vector3 pos = new Vector3(x, 0, z);
             renderer.SetPosition(i, pos);
         }
+    }
+
+    public void Select()
+    {
+        StopCoroutine(ringFadeAnim);
+        StartCoroutine(AnimateFade(1));
+    }
+
+    public void Deselect()
+    {
+        StopCoroutine(ringFadeAnim);
+        StartCoroutine(AnimateFade(0f));
+    }
+
+    private IEnumerator AnimateFade(float alpha)
+    {
+        Color c = renderer.startColor;
+        while(Mathf.Abs(alpha - c.a) >= 0.2f)
+        {
+            c.a = Mathf.Lerp(c.a, alpha, 0.5f);
+            renderer.startColor = c;
+            renderer.endColor = c;
+            yield return new WaitForFixedUpdate();
+        }
+        c.a = alpha;
+        renderer.startColor = c;
+        renderer.endColor = c;
     }
 
     public void RandomizeMaterial()
@@ -80,6 +113,13 @@ public class SpaceObject : MonoBehaviour
                 Debug.LogWarning(string.Format("Uncompatible Shader Material found at GameObject {0}!", gameObject.name));
                 break;
         }
+    }
+
+    private void OnDestroy()
+    {
+        if (transform.parent == null) return;
+        Orbit o = transform.parent.GetComponent<Orbit>();
+        if (o) o.RemoveObject(this);
     }
 
 }
