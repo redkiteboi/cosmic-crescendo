@@ -116,7 +116,7 @@ public class GameMaster : MonoBehaviour
         newObject.GetComponent<Renderer>().material = mat;
 
         VisualEffect mergePoof = Instantiate(poofEffect, newObject.transform);
-        mergePoof.SetFloat("Scaling", volumeSum);
+        mergePoof.SetFloat("Scaling", volumeSum * 0.75f);
         mergePoof.Play();
     }
 
