@@ -31,11 +31,20 @@ public class SpaceObject : MonoBehaviour
         transform.localScale = new Vector3(volume, volume, volume);
         mergeRange = mass;
         DrawCircle(100, mass);
+        foreach(Orbit o in GetComponentsInChildren<Orbit>())
+        {
+            o.OnValidate();
+        }
     }
 
     private void DrawCircle(int corners, float radius)
     {
         renderer.positionCount = corners;
+
+        float width = 0.025f;
+        renderer.startWidth = width;
+        renderer.endWidth = width;
+
         for (int i = 0; i < corners; i++)
         {
             float circumference = (float)i / corners;
@@ -118,8 +127,9 @@ public class SpaceObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision");
-        Instantiate(poof, collision.GetContact(0).point, collision.transform.rotation).Play();
+        VisualEffect colPoof = Instantiate(poof, collision.GetContact(0).point, collision.transform.rotation);
+        colPoof.SetFloat("Scaling", volume * 0.6f);
+        colPoof.Play();
     }
 
     private void OnDestroy()

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6024977657950215993
+--- !u!1 &362963706094959303
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1481644299119609838}
-  - component: {fileID: 5820764608728919158}
+  - component: {fileID: 362963706094959301}
+  - component: {fileID: 362963706094959302}
   m_Layer: 0
-  m_Name: GameMaster
+  m_Name: Orbit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1481644299119609838
+--- !u!4 &362963706094959301
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6024977657950215993}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 362963706094959303}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -32,30 +32,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5820764608728919158
+--- !u!114 &362963706094959302
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6024977657950215993}
+  m_GameObject: {fileID: 362963706094959303}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87d88c5c31a313c4aaa9480c9b85e557, type: 3}
+  m_Script: {fileID: 11500000, guid: 34ba278881bcdd74985281b37ef01cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  defaultObj: {fileID: 1655152955113421758, guid: 6a7a1a2e8f1251b4893012f888b44eeb,
-    type: 3}
-  audioManager: {fileID: 0}
-  poofEffect: {fileID: 4037932696335243462, guid: 12d738aefb035ad4097e11823bd88d08,
-    type: 3}
-  mergeCount: 0
-  currentLayer: 0
-  layerRequirements: 0000000000000000000000000000000000000000
-  layerDistance:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  speed: -2

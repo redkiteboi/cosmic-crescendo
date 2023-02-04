@@ -9,10 +9,21 @@ public class Orbit : MonoBehaviour
 
     private void Awake()
     {
+        OnValidate();
         foreach (SpaceObject s in GetComponentsInChildren<SpaceObject>())
         {
             children.Add(s);
         }
+    }
+
+    public void OnValidate()
+    {
+        if (transform.parent == null) return;
+        Vector3 scale = transform.parent.localScale;
+        scale.x = 1 / scale.x;
+        scale.y = 1 / scale.y;
+        scale.z = 1 / scale.z;
+        transform.localScale = scale;
     }
 
     private void FixedUpdate()
