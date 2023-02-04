@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2091613326219088115}
   - component: {fileID: 7598817414264123929}
   - component: {fileID: 3595043544778193225}
-  - component: {fileID: 4675079985754086057}
+  - component: {fileID: 1406166110983383922}
   m_Layer: 0
   m_Name: Galaxy_forAnim
   m_TagString: Untagged
@@ -63,7 +63,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.4748206, y: 0.52647233, z: 4.5744243}
   m_Center: {x: -0.24903505, y: 0.10242162, z: 0.072058305}
---- !u!54 &4675079985754086057
+--- !u!54 &1406166110983383922
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

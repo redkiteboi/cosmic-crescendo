@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -60,7 +61,11 @@ public class plantemagnet : MonoBehaviour
     {
         Debug.Log("I was here");
 
+        if(collision.gameObject.name.Equals("blackhole"))
+        gameObject.SetActive(false);
+        /*
         Destroy(this);
+        */
 
     }
 
