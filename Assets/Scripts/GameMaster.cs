@@ -33,19 +33,49 @@ public class GameMaster : MonoBehaviour
         }
 
         float distance = Vector3.Distance(object1.transform.position, object2.transform.position);
-        int a = 0;
         if (object1.mergeRange < distance && object2.mergeRange < distance) return false;
 
+        instance.StartCoroutine(instance.AnimateMerge(object1, object2));
+
+        return true;
+    }
+
+    private IEnumerator AnimateMerge(SpaceObject object1, SpaceObject object2)
+    {
+        Vector3 pos1 = object1.transform.position;
+        Vector3 pos2 = object2.transform.position;
+        float distance = Vector3.Distance(pos1, pos2);
+
+        float massSum = object1.mass + object2.mass;
+        float relDist = object2.mass / massSum;
+        Vector3 mergePoint = Vector3.Lerp(pos1, pos2, relDist);
+
+        while (distance >= 1f)
+        {
+            object1.transform.position = Vector3.Lerp(pos1, mergePoint, 0.025f);
+            object2.transform.position = Vector3.Lerp(pos2, mergePoint, 0.025f);
+
+            pos1 = object1.transform.position;
+            pos2 = object2.transform.position;
+
+            distance = Vector3.Distance(pos1, pos2);
+
+            yield return new WaitForFixedUpdate();
+        }
+        
+        SpawnNewPlanet(object1, object2);
+    }
+
+    private void SpawnNewPlanet(SpaceObject object1, SpaceObject object2)
+    {
         float massSum = object1.mass + object2.mass;
         float relDist = object2.mass / massSum;
 
         Vector3 position = Vector3.Lerp(object1.transform.position, object2.transform.position, relDist);
-        float mass = object1.mass + object2.mass;
         Destroy(object1.gameObject);
         Destroy(object2.gameObject);
 
         SpaceObject newObject = Instantiate(instance.spaceObject, position, object1.transform.rotation);
         newObject.mass = massSum;
-        return true;
     }
 }
