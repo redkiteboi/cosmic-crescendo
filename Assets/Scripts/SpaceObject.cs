@@ -5,7 +5,9 @@ using UnityEngine;
 public class SpaceObject : MonoBehaviour
 {
     [SerializeField] public float mass = 1f;
-    [SerializeField] public float range = 1f;
+    [SerializeField] public float rangeMulti = 1f;
+
+    public float mergeRange { get; private set; }
 
     [SerializeField] private new LineRenderer renderer;
 
@@ -17,7 +19,8 @@ public class SpaceObject : MonoBehaviour
     private void OnValidate()
     {
         transform.localScale = new Vector3(mass, mass, mass);
-        DrawCircle(100, mass * range);
+        mergeRange = mass * rangeMulti * transform.localScale.x;
+        DrawCircle(100, mass * rangeMulti);
     }
 
     private void DrawCircle(int corners, float radius)
