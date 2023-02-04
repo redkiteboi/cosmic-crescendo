@@ -271,8 +271,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 1.2, y: 31.28, z: -9.17}
+  m_LocalRotation: {x: 0.5553782, y: -0.18024512, z: 0.12479007, w: 0.80218095}
+  m_LocalPosition: {x: 4.34, y: 26.98, z: -9.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13547,6 +13547,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
         type: 3}
+      propertyPath: layerCamPos.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
+        type: 3}
       propertyPath: layerDistance.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -13563,17 +13568,62 @@ PrefabInstance:
     - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
         type: 3}
       propertyPath: layerCamPos.Array.data[1].x
-      value: -16.51
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
         type: 3}
       propertyPath: layerCamPos.Array.data[1].y
-      value: 25.78
+      value: 12.01
       objectReference: {fileID: 0}
     - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
         type: 3}
       propertyPath: layerCamPos.Array.data[1].z
-      value: -24.13
+      value: -9.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
+        type: 3}
+      propertyPath: layerCamPos.Array.data[2].x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
+        type: 3}
+      propertyPath: layerCamPos.Array.data[2].y
+      value: 12.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
+        type: 3}
+      propertyPath: layerCamPos.Array.data[2].z
+      value: -9.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
+        type: 3}
+      propertyPath: layerCamPos.Array.data[3].y
+      value: 12.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
+        type: 3}
+      propertyPath: layerCamPos.Array.data[3].z
+      value: -9.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
+        type: 3}
+      propertyPath: layerCamPos.Array.data[4].y
+      value: 12.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
+        type: 3}
+      propertyPath: layerCamPos.Array.data[4].z
+      value: -9.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
+        type: 3}
+      propertyPath: layerCamPos.Array.data[5].y
+      value: 12.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
+        type: 3}
+      propertyPath: layerCamPos.Array.data[5].z
+      value: -9.17
       objectReference: {fileID: 0}
     - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
         type: 3}

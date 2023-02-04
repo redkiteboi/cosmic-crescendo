@@ -56,9 +56,10 @@ MonoBehaviour:
   currentLayer: 0
   lineWidth: 0.06
   layerRequirements: 0000000000000000000000000000000000000000
-  layerDistance:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  layerCamPos:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
