@@ -216,7 +216,16 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.06875038
+        value: 0.025
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.025
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -275,6 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951504cebd084e14fa548b4c55c8165a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 6
   volume: 1
   mass: 1
   poof: {fileID: 4037932696335243462, guid: 12d738aefb035ad4097e11823bd88d08, type: 3}
@@ -491,3 +501,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7647035395790547368}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2192462734374637197 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8390921959252272933, guid: 9f12c74f1865bb44eb5ea1a1cd91a94a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7647035395790547368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5029727863037693659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2192462734374637197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e02fcb99708e04a4a94b5ed64d68d3b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
