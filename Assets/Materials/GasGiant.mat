@@ -21,6 +21,18 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _SampleTexture2D_0084ec855f9b4210adb2c42bde9847e3_Texture_1:
+        m_Texture: {fileID: 2800000, guid: f3f9957a5e176e54594ae88f9818fb77, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_c4c46f44e8074bd593eb7b12eae50e42_Texture_1:
+        m_Texture: {fileID: 2800000, guid: f3f9957a5e176e54594ae88f9818fb77, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_da7d37a9a9ac4ba2802af48089bff4fa_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 5752c393e9f1d7e4a8529b98700d092a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -35,9 +47,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Feature_Strength: 0.98
+    - _Lines: 0.16
+    - _Noise: 0.92
     - _QueueControl: 0
     - _QueueOffset: 0
-    m_Colors: []
+    m_Colors:
+    - _AthmoColor: {r: 0.405311, g: 0.41568628, b: 0, a: 0}
+    - _AtmoColor: {r: 0.4156863, g: 0.282353, b: 0, a: 0}
+    - _BaseColor: {r: 0, g: 0.23746571, b: 0.6901961, a: 0}
+    - _FeatureColor: {r: 0.9176308, g: 1, b: 0.34509802, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &3717923041597483130
 MonoBehaviour:
