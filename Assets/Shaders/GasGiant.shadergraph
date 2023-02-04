@@ -645,10 +645,10 @@
     "m_Guid": {
         "m_GuidSerialized": "7a743071-2ea0-421c-9e0a-7451dfd27ec7"
     },
-    "m_Name": "AthmoColor",
+    "m_Name": "AtmoColor",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "AthmoColor",
-    "m_DefaultReferenceName": "_AthmoColor",
+    "m_RefNameGeneratedByDisplayName": "AtmoColor",
+    "m_DefaultReferenceName": "_AtmoColor",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -2589,7 +2589,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "959f1549384c4350840047f2510f7846",
     "m_Id": 0,
-    "m_DisplayName": "AthmoColor",
+    "m_DisplayName": "AtmoColor",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
