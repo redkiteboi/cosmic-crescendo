@@ -14,8 +14,8 @@ public class GameMaster : MonoBehaviour
     private ArrayList spaceObjects = new ArrayList();
 
     [SerializeField] private int currentLayer = 0;
-    [SerializeField] private int[] layerRequirements = new int[4];
-    [SerializeField] private float[] layerDistance = new float[4];
+    [SerializeField] private int[] layerRequirements = new int[5];
+    [SerializeField] private float[] layerDistance = new float[5];
 
     private void Awake()
     {
@@ -83,10 +83,12 @@ public class GameMaster : MonoBehaviour
         }
         
         SpawnNewPlanet(object1, object2);
+        
         mergeCount++;
         AdjustCam(1);
         if (mergeCount >= layerRequirements[currentLayer])
         {
+            mergeCount = 0;
             AdjustCam(layerDistance[currentLayer]);
             audioManager.SetLayer(++currentLayer);
         }
