@@ -6,9 +6,11 @@ public class plantemagnet : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    /*
     [SerializeField] GameObject end;
+    */
     [SerializeField] private float velocity;
-    private float besch = 0.0f;
+    [SerializeField] float besch = 0.0f;
     private Vector3 begpos;
     
     void Start()
@@ -24,16 +26,13 @@ public class plantemagnet : MonoBehaviour
     {
         Vector3 pos = transform.position;
 
-        Vector3 endpos = end.transform.position;
-
+        Vector3 endpos = new Vector3(-5.7f,0.0f,-57.3f);
+        
         
         transform.position = Vector3.MoveTowards(pos, endpos, velocity + besch );
+        besch = +besch+0.0001f;
 
-        /*if(begpos.x )
-        besch =+ 0.05f;*/
-        /*float endx =endpos.x;
-        float endy = endpos.y;
-        float endz = endpos.z;*/
+      
     }
 
     public void movePlanets()
