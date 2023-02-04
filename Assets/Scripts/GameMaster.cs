@@ -6,7 +6,15 @@ public class GameMaster : MonoBehaviour
 {
     private static GameMaster instance;
 
-    [SerializeField] private SpaceObject spaceObject;
+    [SerializeField] private MainCam cam;
+    [SerializeField] private SpaceObject defaultObj;
+    [SerializeField] private int mergeCount = 0;
+
+    private ArrayList spaceObjects = new ArrayList();
+
+    [SerializeField] private int currentLayer = 0;
+    [SerializeField] private int[] layerRequirements = new int[4];
+    [SerializeField] private float[] layerDistance = new float[4];
 
     private void Awake()
     {
@@ -16,6 +24,11 @@ public class GameMaster : MonoBehaviour
             Debug.LogWarning(string.Format("Second GameMaster instance detected. Deleting {0}!", gameObject.name));
             Destroy(gameObject);
         }
+    }
+
+    public void RegisterPlanet(SpaceObject object1)
+    {
+        spaceObjects.Add(object1);
     }
 
     public static bool MergePlanets(SpaceObject[] objects)
@@ -69,6 +82,9 @@ public class GameMaster : MonoBehaviour
         }
         
         SpawnNewPlanet(object1, object2);
+        mergeCount++;
+        AdjustCam(1);
+        if (mergeCount >= layerRequirements[currentLayer]) AdjustCam(layerDistance[currentLayer]);
     }
 
     private void SpawnNewPlanet(SpaceObject object1, SpaceObject object2)
@@ -82,10 +98,15 @@ public class GameMaster : MonoBehaviour
         Destroy(object1.gameObject);
         Destroy(object2.gameObject);
 
-        SpaceObject newObject = Instantiate(instance.spaceObject, position, object1.transform.rotation);
+        SpaceObject newObject = Instantiate(instance.defaultObj, position, object1.transform.rotation);
         newObject.mass = massSum;
         newObject.volume = volumeSum;
         newObject.isOriginal = false;
         newObject.GetComponent<Renderer>().material = mat;
+    }
+
+    private void AdjustCam(float distance)
+    {
+        cam.goalPos -= cam.transform.forward * distance;
     }
 }
