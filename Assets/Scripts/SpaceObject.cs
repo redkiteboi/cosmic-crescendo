@@ -5,6 +5,7 @@ using UnityEngine.VFX;
 
 public class SpaceObject : MonoBehaviour
 {
+    [SerializeField] public SpaceObjectType type;
     [SerializeField] public float volume = 1f;
     [SerializeField] public float mass = 1f;
     [SerializeField] private VisualEffect poof;
@@ -86,17 +87,19 @@ public class SpaceObject : MonoBehaviour
     public void RandomizeMaterial()
     {
         Material m = GetComponent<Renderer>().material;
-        switch (m.shader.name)
+        switch (type)
         {
-            case "Shader Graphs/PlanetShader":
+            case SpaceObjectType.Asteroid:
+                break;
+            case SpaceObjectType.RockPlanet:
                 m.SetColor("_Color", Random.ColorHSV());
                 m.SetColor("_AtmoColor", Random.ColorHSV());
                 break;
-            case "Shader Graphs/GasGiant":
+            case SpaceObjectType.GasGiant:
                 m.SetColor("_BaseColor", Random.ColorHSV());
                 m.SetColor("_AtmoColor", Random.ColorHSV());
                 break;
-            case "Shader Graphs/SunShader":
+            case SpaceObjectType.Star:
                 Color bass = m.GetColor("_BaseColor");
                 Color cell = m.GetColor("_CellColor");
 
@@ -115,12 +118,14 @@ public class SpaceObject : MonoBehaviour
                 m.SetColor("_BaseColor", bass);
                 m.SetColor("_CellColor", cell);
                 break;
-            case "Shader Graphs/BlackHole":
+            case SpaceObjectType.BlackHole:
                 break;
-            case "Shader Graphs/Universe":
+            case SpaceObjectType.Galaxy:
+                break;
+            case SpaceObjectType.Universe:
                 break;
             default:
-                Debug.LogWarning(string.Format("Uncompatible Shader Material found at GameObject {0}!", gameObject.name));
+                Debug.LogWarning(string.Format("Unknown SpaceObjectType found at GameObject {0}!", gameObject.name));
                 break;
         }
     }

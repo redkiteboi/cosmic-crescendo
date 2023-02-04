@@ -9,6 +9,7 @@ public class GameMaster : MonoBehaviour
 
     [SerializeField] private MainCam cam;
     [SerializeField] private SpaceObject defaultObj;
+    [SerializeField] private SpaceObject defaultGalaxy;
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private VisualEffect poofEffect;
     [SerializeField] private int mergeCount = 0;
@@ -104,13 +105,29 @@ public class GameMaster : MonoBehaviour
         float massSum = object1.mass + object2.mass;
         float relDist = object2.mass / massSum;
         float volumeSum = object1.volume + object2.volume;
-        Material mat = object1.mass >= object2.mass ? object1.GetComponent<Renderer>().material : object2.GetComponent<Renderer>().material;
+        Material mat;
+        SpaceObjectType type;
+
+        if (object1.mass >= object2.mass)
+        {
+            type = object1.type;
+            mat = object1.GetComponent<Renderer>().material;
+        }
+        else
+        {
+            type = object2.type;
+            mat = object2.GetComponent<Renderer>().material;
+        }
+        
 
         Vector3 position = Vector3.Lerp(object1.transform.position, object2.transform.position, relDist);
         Destroy(object1.gameObject);
         Destroy(object2.gameObject);
 
-        SpaceObject newObject = Instantiate(instance.defaultObj, position, object1.transform.rotation);
+        SpaceObject newObject;
+        if (type == SpaceObjectType.Galaxy) newObject = Instantiate(instance.defaultGalaxy, position, object1.transform.rotation);
+        else newObject = Instantiate(instance.defaultObj, position, object1.transform.rotation);
+        newObject.type = type;
         newObject.mass = massSum;
         newObject.volume = volumeSum;
         newObject.isOriginal = false;
