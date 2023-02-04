@@ -9,7 +9,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource part1;
     [SerializeField] private AudioSource part2;
     [SerializeField] private AudioSource part3;
-    [SerializeField] private AudioSource part4;
+    [SerializeField] private AudioSource part4;    
+    [SerializeField] private AudioSource part5;
+
 
     [SerializeField] private AudioMixer audioMixer;
 
@@ -20,6 +22,7 @@ public class AudioManager : MonoBehaviour
         part2.Play();
         part3.Play();
         part4.Play();
+        part5.Play();
         StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part1_vol", 5.0f, 1.0f));
     }
 
@@ -40,6 +43,9 @@ public class AudioManager : MonoBehaviour
                 StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part4_vol", 2.0f, 1.0f));
                 break;
             case 4:
+                StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part5_vol", 2.0f, 1.0f));
+                break;
+            case 5:
                 //Start sound end sequence
                 Debug.Log("You are Winner!");
                 break;
