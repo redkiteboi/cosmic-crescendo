@@ -311,4 +311,5 @@ MonoBehaviour:
   volume: 1
   mass: 1
   isOriginal: 1
+  isMerging: 0
   renderer: {fileID: 4033336222014423642}
