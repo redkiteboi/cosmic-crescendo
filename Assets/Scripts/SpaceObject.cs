@@ -42,7 +42,9 @@ public class SpaceObject : MonoBehaviour
     {
         renderer.positionCount = corners;
 
-        float width = Vector3.Distance(Camera.main.transform.position, Vector3.zero) * 0.00625f;
+        float width;
+        if (Camera.main != null) width = Vector3.Distance(Camera.main.transform.position, Vector3.zero) * 0.00625f;
+        else width = 0.06f;
         renderer.startWidth = width;
         renderer.endWidth = width;
 
