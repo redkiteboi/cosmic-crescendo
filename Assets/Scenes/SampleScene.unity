@@ -13531,18 +13531,6 @@ PrefabInstance:
       objectReference: {fileID: 330585548}
     - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
         type: 3}
-      propertyPath: defaultObj
-      value: 
-      objectReference: {fileID: 1655152955113421758, guid: 6a7a1a2e8f1251b4893012f888b44eeb,
-        type: 3}
-    - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
-        type: 3}
-      propertyPath: poofEffect
-      value: 
-      objectReference: {fileID: 4037932696335243462, guid: 12d738aefb035ad4097e11823bd88d08,
-        type: 3}
-    - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
-        type: 3}
       propertyPath: spaceObject
       value: 
       objectReference: {fileID: 1655152955113421758, guid: 6a7a1a2e8f1251b4893012f888b44eeb,
