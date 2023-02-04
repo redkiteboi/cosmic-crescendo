@@ -6,8 +6,6 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] public int currentLayer = 0;
-
     [SerializeField] private AudioSource part1;
     [SerializeField] private AudioSource part2;
     [SerializeField] private AudioSource part3;
@@ -15,7 +13,6 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioMixer audioMixer;
 
-    // Start is called before the first frame update
     void Start()
     {
         Debug.Log("TestAudio");
@@ -23,19 +20,32 @@ public class AudioManager : MonoBehaviour
         part2.Play();
         part3.Play();
         part4.Play();
+        StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part1_vol", 5.0f, 1.0f));
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetLayer(int layer)
     {
-        
-        StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part1_vol",  5.0f, 1.0f));
-        
-        //StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part2_vol",  2.0f, 1.0f));
-        
-        //StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part3_vol",  2.0f, 1.0f));
-        
-       // StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part4_vol",  2.0f, 1.0f));
-        
+        switch (layer)
+        {
+            case 0:
+                StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part1_vol", 5.0f, 1.0f));
+                break;
+            case 1:
+                StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part2_vol", 2.0f, 1.0f));
+                break;
+            case 2:
+                StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part3_vol", 2.0f, 1.0f));
+                break;
+            case 3:
+                StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part4_vol", 2.0f, 1.0f));
+                break;
+            case 4:
+                //Start sound end sequence
+                Debug.Log("You are Winner!");
+                break;
+            default:
+                Debug.LogError("Invalid layer number!");
+                break;
+        }
     }
 }

@@ -8,6 +8,7 @@ public class GameMaster : MonoBehaviour
 
     [SerializeField] private MainCam cam;
     [SerializeField] private SpaceObject defaultObj;
+    [SerializeField] private AudioManager audioManager;
     [SerializeField] private int mergeCount = 0;
 
     private ArrayList spaceObjects = new ArrayList();
@@ -84,7 +85,11 @@ public class GameMaster : MonoBehaviour
         SpawnNewPlanet(object1, object2);
         mergeCount++;
         AdjustCam(1);
-        if (mergeCount >= layerRequirements[currentLayer]) AdjustCam(layerDistance[currentLayer]);
+        if (mergeCount >= layerRequirements[currentLayer])
+        {
+            AdjustCam(layerDistance[currentLayer]);
+            audioManager.SetLayer(++currentLayer);
+        }
     }
 
     private void SpawnNewPlanet(SpaceObject object1, SpaceObject object2)
