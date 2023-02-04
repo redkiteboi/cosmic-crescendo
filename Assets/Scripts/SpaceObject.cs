@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class SpaceObject : MonoBehaviour
 {
     [SerializeField] public float volume = 1f;
     [SerializeField] public float mass = 1f;
-
+    [SerializeField] private VisualEffect poof;
     public float mergeRange { get; private set; }
     public bool isOriginal = true;
     public bool isMerging = false;
@@ -113,6 +114,12 @@ public class SpaceObject : MonoBehaviour
                 Debug.LogWarning(string.Format("Uncompatible Shader Material found at GameObject {0}!", gameObject.name));
                 break;
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collision");
+        Instantiate(poof, collision.GetContact(0).point, collision.transform.rotation).Play();
     }
 
     private void OnDestroy()
