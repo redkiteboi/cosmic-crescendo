@@ -115,4 +115,11 @@ public class SpaceObject : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        if (transform.parent == null) return;
+        Orbit o = transform.parent.GetComponent<Orbit>();
+        if (o) o.RemoveObject(this);
+    }
+
 }
