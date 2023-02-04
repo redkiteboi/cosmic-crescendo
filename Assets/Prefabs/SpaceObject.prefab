@@ -310,4 +310,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volume: 1
   mass: 1
+  isOriginal: 1
   renderer: {fileID: 4033336222014423642}

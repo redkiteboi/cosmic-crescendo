@@ -9,6 +9,7 @@ public class SpaceObject : MonoBehaviour
 
     public float mergeRange { get; private set; }
     public bool isOriginal = true;
+    public bool isMerging = false;
 
     [SerializeField] private new LineRenderer renderer;
 

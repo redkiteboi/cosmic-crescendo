@@ -97,6 +97,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _Athmoglow: 1
+    - _AtmoGlow: 0.5
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
@@ -127,6 +128,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Athmocolor: {r: 1.7192528, g: 0.49469063, b: 1.4246137, a: 0}
+    - _AtmoColor: {r: 2.0282278, g: 1.4254998, b: 1.5350866, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.491356, g: 0, b: 0.7529412, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
