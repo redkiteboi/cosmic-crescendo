@@ -37,6 +37,7 @@ public class GameMaster : MonoBehaviour
     {
         cam.goalPos = layerCamPos[0];
         StartCoroutine(IntroSequence());
+        audioManager.SetLayer(currentLayer);
     }
 
     private IEnumerator IntroSequence()
