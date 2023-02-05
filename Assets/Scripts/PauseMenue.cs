@@ -13,13 +13,14 @@ public class PauseMenue : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         pauseButton.SetActive(true);
-
+        GameMaster.SetPaused(false);
     }
 
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
         pauseButton.SetActive(false);
+        GameMaster.SetPaused(true);
     }
 
     public void LoadCurrentScene()

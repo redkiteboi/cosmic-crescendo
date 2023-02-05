@@ -407,7 +407,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: 7.882442
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -416,7 +416,7 @@ LineRenderer:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 0
+        value: 7.882442
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -475,6 +475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951504cebd084e14fa548b4c55c8165a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   volume: 1
   mass: 1
   poof: {fileID: 4037932696335243462, guid: 12d738aefb035ad4097e11823bd88d08, type: 3}

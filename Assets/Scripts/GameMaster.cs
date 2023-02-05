@@ -7,18 +7,20 @@ public class GameMaster : MonoBehaviour
 {
     private static GameMaster instance;
 
-    [SerializeField] private MainCam cam;
+    [SerializeField] public MainCam cam;
     [SerializeField] private SpaceObject defaultObj;
+    [SerializeField] private SpaceObject defaultGalaxy;
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private VisualEffect poofEffect;
     [SerializeField] private int mergeCount = 0;
+    [SerializeField] private bool isPaused = true;
+    [SerializeField] private float introTimer = 3f;
 
     private ArrayList spaceObjects = new ArrayList();
 
     [SerializeField] private int currentLayer = 0;
-    [SerializeField] private float lineWidth = 0.06f;
     [SerializeField] private int[] layerRequirements = new int[5];
-    [SerializeField] private float[] layerDistance = new float[5];
+    [SerializeField] private Vector3[] layerCamPos = new Vector3[6];
 
     private void Awake()
     {
@@ -28,6 +30,29 @@ public class GameMaster : MonoBehaviour
             Debug.LogWarning(string.Format("Second GameMaster instance detected. Deleting {0}!", gameObject.name));
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        cam.goalPos = layerCamPos[0];
+        StartCoroutine(IntroSequence());
+    }
+
+    private IEnumerator IntroSequence()
+    {
+        yield return new WaitForSeconds(introTimer);
+        isPaused = false;
+    }
+
+    public static void SetPaused(bool pause)
+    {
+        if (instance != null) instance.isPaused = pause;
+    }
+
+    public static bool GetPaused()
+    {
+        if (instance != null) return instance.isPaused;
+        else return true;
     }
 
     public void RegisterPlanet(SpaceObject object1)
@@ -49,6 +74,8 @@ public class GameMaster : MonoBehaviour
             Debug.LogError("No GameMaster has been established yet!");
             return false;
         }
+
+        if (instance.isPaused) return false;
 
         if (object1.isMerging || object2.isMerging) return false;
 
@@ -90,12 +117,11 @@ public class GameMaster : MonoBehaviour
         SpawnNewPlanet(object1, object2);
         
         mergeCount++;
-        AdjustCam(1);
         if (mergeCount >= layerRequirements[currentLayer])
         {
             mergeCount = 0;
-            AdjustCam(layerDistance[currentLayer]);
-            audioManager.SetLayer(++currentLayer);
+            AdjustCam(layerCamPos[++currentLayer]);
+            audioManager.SetLayer(currentLayer);
         }
     }
 
@@ -104,13 +130,29 @@ public class GameMaster : MonoBehaviour
         float massSum = object1.mass + object2.mass;
         float relDist = object2.mass / massSum;
         float volumeSum = object1.volume + object2.volume;
-        Material mat = object1.mass >= object2.mass ? object1.GetComponent<Renderer>().material : object2.GetComponent<Renderer>().material;
+        Material mat;
+        SpaceObjectType type;
+
+        if (object1.mass >= object2.mass)
+        {
+            type = object1.type;
+            mat = object1.GetComponent<Renderer>().material;
+        }
+        else
+        {
+            type = object2.type;
+            mat = object2.GetComponent<Renderer>().material;
+        }
+        
 
         Vector3 position = Vector3.Lerp(object1.transform.position, object2.transform.position, relDist);
         Destroy(object1.gameObject);
         Destroy(object2.gameObject);
 
-        SpaceObject newObject = Instantiate(instance.defaultObj, position, object1.transform.rotation);
+        SpaceObject newObject;
+        if (type == SpaceObjectType.Galaxy) newObject = Instantiate(instance.defaultGalaxy, position, object1.transform.rotation);
+        else newObject = Instantiate(instance.defaultObj, position, object1.transform.rotation);
+        newObject.type = type;
         newObject.mass = massSum;
         newObject.volume = volumeSum;
         newObject.isOriginal = false;
@@ -121,18 +163,9 @@ public class GameMaster : MonoBehaviour
         mergePoof.Play();
     }
 
-    private void AdjustCam(float distance)
+    private void AdjustCam(Vector3 pos)
     {
-        cam.goalPos -= cam.transform.forward * distance;
+        cam.goalPos = pos;
     }
 
-    public static float GetLineWidth()
-    {
-        if (instance) return instance.lineWidth;
-        else
-        {
-            Debug.LogError("No instance of GameMaster found!");
-            return 0;
-        }
-    }
 }
