@@ -8,6 +8,7 @@ public class SpaceObject : MonoBehaviour
     [SerializeField] public SpaceObjectType type;
     [SerializeField] public float volume = 1f;
     [SerializeField] public float mass = 1f;
+    [SerializeField] private float multiplier = 1f;
     [SerializeField] private VisualEffect poof;
     public float mergeRange { get; private set; }
     public bool isOriginal = true;
@@ -30,8 +31,8 @@ public class SpaceObject : MonoBehaviour
     private void OnValidate()
     {
         transform.localScale = new Vector3(volume, volume, volume);
-        mergeRange = mass;
-        DrawCircle(100, mass);
+        mergeRange = mass * multiplier;
+        DrawCircle(100, mergeRange);
         foreach(Orbit o in GetComponentsInChildren<Orbit>())
         {
             o.OnValidate();
