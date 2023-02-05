@@ -15,6 +15,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource part4;    
     [SerializeField] private AudioSource part5;
     [SerializeField] private AudioSource endsequence;
+    
+    [SerializeField] private AudioSource start;
 
 
     [SerializeField] private AudioMixer audioMixer;

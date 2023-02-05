@@ -36,6 +36,7 @@ public class Explosion : MonoBehaviour
            Draw(currentRadius);
            yield return null;
         }
+        ScreenFade.FadeOutScene();
     }
 
     private void Draw( float currentRadius)
@@ -60,7 +61,6 @@ public class Explosion : MonoBehaviour
         if (gameObject.activeSelf)
         {
             StartCoroutine(Blast());
-
             //put Screen Fade here 
         }
         
