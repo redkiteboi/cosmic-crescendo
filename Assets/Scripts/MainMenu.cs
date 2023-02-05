@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,13 +10,18 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject quitButton;
     public static bool gameStarted = false;
 
+    private void Start()
+    {
+        
+    }
+
     public void StartGame()
     {
         startButton.SetActive(false);
         quitButton.SetActive(false);
 
-
         AudioManager.PlayStartAudio();
+
         //SceneManager.LoadScene(1);
         
 
