@@ -11,7 +11,7 @@ public class GameMaster : MonoBehaviour
     [SerializeField] public MainCam cam;
     [SerializeField] private SpaceObject defaultObj;
     [SerializeField] private SpaceObject defaultGalaxy;
-    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private SpaceObject defaultBlackHole;
     [SerializeField] private VisualEffect poofEffect;
     [SerializeField] private int mergeCount = 0;
     [SerializeField] private bool isPaused = true;
@@ -37,6 +37,7 @@ public class GameMaster : MonoBehaviour
     {
         cam.goalPos = layerCamPos[0];
         StartCoroutine(IntroSequence());
+        AudioManager.SetLayer(currentLayer);
     }
 
     private IEnumerator IntroSequence()
@@ -97,12 +98,13 @@ public class GameMaster : MonoBehaviour
         Vector3 pos1 = object1.transform.position;
         Vector3 pos2 = object2.transform.position;
         float distance = Vector3.Distance(pos1, pos2);
+        float ogDistance = distance;
 
         float massSum = object1.mass + object2.mass;
         float relDist = object2.mass / massSum;
         Vector3 mergePoint = Vector3.Lerp(pos1, pos2, relDist);
 
-        while (distance >= 1f)
+        while (distance > ogDistance / 8f)
         {
             object1.transform.position = Vector3.Lerp(pos1, mergePoint, 0.025f);
             object2.transform.position = Vector3.Lerp(pos2, mergePoint, 0.025f);
@@ -122,7 +124,7 @@ public class GameMaster : MonoBehaviour
         {
             mergeCount = 0;
             AdjustCam(layerCamPos[++currentLayer]);
-            audioManager.SetLayer(currentLayer);
+            AudioManager.SetLayer(currentLayer);
             if (currentLayer >= 5) Debug.Log("You are Winner!");
         }
     }
@@ -135,7 +137,17 @@ public class GameMaster : MonoBehaviour
         Material mat;
         SpaceObjectType type;
 
-        if (object1.mass >= object2.mass)
+        if (object1.type == SpaceObjectType.BlackHole)
+        {
+            type = SpaceObjectType.BlackHole;
+            mat = object1.GetComponent<Renderer>().material;
+        }
+        else if (object2.type == SpaceObjectType.BlackHole)
+        {
+            type = SpaceObjectType.BlackHole;
+            mat = object2.GetComponent<Renderer>().material;
+        }
+        else if (object1.mass >= object2.mass)
         {
             type = object1.type;
             mat = object1.GetComponent<Renderer>().material;
@@ -153,6 +165,7 @@ public class GameMaster : MonoBehaviour
 
         SpaceObject newObject;
         if (type == SpaceObjectType.Galaxy) newObject = Instantiate(instance.defaultGalaxy, position, object1.transform.rotation);
+        else if (type == SpaceObjectType.BlackHole) newObject = Instantiate(instance.defaultBlackHole, position, object1.transform.rotation);
         else newObject = Instantiate(instance.defaultObj, position, object1.transform.rotation);
         newObject.type = type;
         newObject.mass = massSum;
