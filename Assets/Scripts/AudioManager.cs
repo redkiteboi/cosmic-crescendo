@@ -54,9 +54,6 @@ public class AudioManager : MonoBehaviour
                 StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part3_vol", .5f, 0f));
                 StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part2_vol", .5f, 0f));
                 StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part1_vol", .5f, 0f));
-                
-                //Start sound end sequence
-                Debug.Log("You are Winner!");
                 break;
             default:
                 Debug.LogError("Invalid layer number!");

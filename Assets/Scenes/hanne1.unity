@@ -2107,8 +2107,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225986216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.74, z: 1.35}
-  m_LocalScale: {x: 66.45175, y: 66.45175, z: 66.45175}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 97.70525, y: 97.70525, z: 97.70525}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1590374278}
@@ -2270,7 +2270,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 1.7
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2438,8 +2438,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 4
+      minMaxState: 0
+      scalar: 4.5
       minScalar: 3
       maxCurve:
         serializedVersion: 2
@@ -2491,7 +2491,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -2544,7 +2544,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -3131,7 +3131,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 6
+        scalar: 8
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -3197,12 +3197,12 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 0
-          inSlope: 0
-          outSlope: 0
+          inSlope: -0.45753205
+          outSlope: -0.45753205
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
-          outWeight: 0
+          outWeight: 0.3389494
         - serializedVersion: 3
           time: 1
           value: 1
@@ -14230,12 +14230,12 @@ PrefabInstance:
     - target: {fileID: 5324946507263393340, guid: c387835c256bfa94f81bb3774f40b680,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.7
+      value: -5.3253
       objectReference: {fileID: 0}
     - target: {fileID: 5324946507263393340, guid: c387835c256bfa94f81bb3774f40b680,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -5.1553
       objectReference: {fileID: 0}
     - target: {fileID: 5324946507263393340, guid: c387835c256bfa94f81bb3774f40b680,
         type: 3}
@@ -17572,7 +17572,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1590374278
 Transform:
   m_ObjectHideFlags: 0
@@ -30353,7 +30353,7 @@ PrefabInstance:
     - target: {fileID: 1596263822568379633, guid: 6af268ca532153a4687ed57c0eb883f6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.62
+      value: 0.54
       objectReference: {fileID: 0}
     - target: {fileID: 1596263822568379633, guid: 6af268ca532153a4687ed57c0eb883f6,
         type: 3}
@@ -30408,12 +30408,12 @@ PrefabInstance:
     - target: {fileID: 1596263822568379635, guid: 6af268ca532153a4687ed57c0eb883f6,
         type: 3}
       propertyPath: speed
-      value: 85.3
+      value: 146.2
       objectReference: {fileID: 0}
     - target: {fileID: 1596263822568379635, guid: 6af268ca532153a4687ed57c0eb883f6,
         type: 3}
       propertyPath: maxRadius
-      value: 300
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1596263822568379635, guid: 6af268ca532153a4687ed57c0eb883f6,
         type: 3}
