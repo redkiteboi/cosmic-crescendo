@@ -1,13 +1,17 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class Explosion : MonoBehaviour
 {
 
-    public int pointsCount;
-    public float maxRadius;
-    public float speed;
-    public float startWidth;
+    [SerializeField] private int pointsCount;
+    [SerializeField] private float maxRadius;
+    [SerializeField] private float speed;
+    [SerializeField] private float startWidth;
+    [SerializeField] private Image fadeScreen; 
+    
 
     private LineRenderer lineRenderer;
     void Awake()
@@ -16,11 +20,11 @@ public class Explosion : MonoBehaviour
         lineRenderer.positionCount = pointsCount + 1;
     }
 
-    public void Explode()
+    /*public void Explode()
     {
         gameObject.SetActive(true);
         StartCoroutine(Blast());
-    }
+    }*/
 
     private IEnumerator Blast()
     {
@@ -32,7 +36,6 @@ public class Explosion : MonoBehaviour
            Draw(currentRadius);
            yield return null;
         }
-
     }
 
     private void Draw( float currentRadius)
@@ -52,10 +55,15 @@ public class Explosion : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if(gameObject.activeSelf)
+        if (gameObject.activeSelf)
+        {
             StartCoroutine(Blast());
+
+            //put Screen Fade here 
+        }
+        
        
     }
 }

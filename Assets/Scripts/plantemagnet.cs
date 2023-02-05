@@ -24,17 +24,31 @@ public class plantemagnet : MonoBehaviour
        {
            RandomizeMaterial();
        }
+
+       Time.timeScale = 0;
+    }
+
+    private void Update()
+    {
+        if (MainMenu.gameStarted)
+        {
+            Time.timeScale = 1;
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate() 
     {
-        Vector3 pos = transform.position;
+        if (MainMenu.gameStarted)
+        {
+            Vector3 pos = transform.position;
 
-        Vector3 target = new Vector3(-5.7f,0.0f,-57.3f);
+            Vector3 target = new Vector3(-5.7f,0.0f,-57.3f);
       
-        transform.position = Vector3.MoveTowards(pos, target, velocity + besch);
-        besch = +besch+0.0001f;
+            transform.position = Vector3.MoveTowards(pos, target, velocity + besch);
+            besch = +besch+0.0001f;
+        }
+      
     }
     
 

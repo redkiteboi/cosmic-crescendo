@@ -24,8 +24,8 @@ public class AnimDetect : StateMachineBehaviour
     //}
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Explosion explosion = go.GetComponent<Explosion>();
-        explosion.Explode();
+        /*Explosion explosion = go.GetComponent<Explosion>();
+        explosion.Explode();*/
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
