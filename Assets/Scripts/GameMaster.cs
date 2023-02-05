@@ -125,7 +125,7 @@ public class GameMaster : MonoBehaviour
             mergeCount = 0;
             AdjustCam(layerCamPos[++currentLayer]);
             AudioManager.SetLayer(currentLayer);
-            if (currentLayer >= 5) Debug.Log("You are Winner!");
+            if (currentLayer >= 5) WinGame();
         }
     }
 
@@ -181,6 +181,11 @@ public class GameMaster : MonoBehaviour
     private void AdjustCam(Vector3 pos)
     {
         cam.goalPos = pos;
+    }
+
+    private void WinGame()
+    {
+        Debug.Log("You are Winner!");
     }
 
 }
