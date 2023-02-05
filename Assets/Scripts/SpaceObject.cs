@@ -8,6 +8,7 @@ public class SpaceObject : MonoBehaviour
     [SerializeField] public SpaceObjectType type;
     [SerializeField] public float volume = 1f;
     [SerializeField] public float mass = 1f;
+    [SerializeField] private float multiplier = 1f;
     [SerializeField] private VisualEffect poof;
     public float mergeRange { get; private set; }
     public bool isOriginal = true;
@@ -30,8 +31,8 @@ public class SpaceObject : MonoBehaviour
     private void OnValidate()
     {
         transform.localScale = new Vector3(volume, volume, volume);
-        mergeRange = mass;
-        DrawCircle(100, mass);
+        mergeRange = mass * multiplier;
+        DrawCircle(100, mergeRange);
         foreach(Orbit o in GetComponentsInChildren<Orbit>())
         {
             o.OnValidate();
@@ -61,7 +62,7 @@ public class SpaceObject : MonoBehaviour
 
     public void Select()
     {
-        DrawCircle(100, mass);
+        DrawCircle(100, mergeRange);
         StopCoroutine(ringFadeAnim);
         StartCoroutine(AnimateFade(1));
     }
@@ -95,11 +96,11 @@ public class SpaceObject : MonoBehaviour
             case SpaceObjectType.Asteroid:
                 break;
             case SpaceObjectType.RockPlanet:
-                m.SetColor("_Color", Random.ColorHSV());
+                m.SetColor("_Color", Random.ColorHSV(0, 1, 0, 1, 0.25f, 1));
                 m.SetColor("_AtmoColor", Random.ColorHSV());
                 break;
             case SpaceObjectType.GasGiant:
-                m.SetColor("_BaseColor", Random.ColorHSV());
+                m.SetColor("_BaseColor", Random.ColorHSV(0, 1, 0, 1, 0.25f, 1));
                 m.SetColor("_AtmoColor", Random.ColorHSV());
                 break;
             case SpaceObjectType.Star:
@@ -112,8 +113,9 @@ public class SpaceObject : MonoBehaviour
                 Color.RGBToHSV(bass, out bassH, out bassS, out bassV);
                 Color.RGBToHSV(cell, out cellH, out cellS, out cellV);
 
-                bassH = Random.Range(0f, 1f);
-                cellH = Random.Range(0f, 1f);
+                float c = Random.Range(0f, 0.666f);
+                bassH = c;
+                cellH = c;
 
                 bass = Color.HSVToRGB(bassH, bassS, bassV);
                 cell = Color.HSVToRGB(cellH, cellS, cellV);

@@ -478,6 +478,7 @@ MonoBehaviour:
   type: 0
   volume: 1
   mass: 1
+  multiplier: 1
   poof: {fileID: 4037932696335243462, guid: 12d738aefb035ad4097e11823bd88d08, type: 3}
   isOriginal: 1
   isMerging: 0
