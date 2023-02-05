@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
         startButton.SetActive(false);
         quitButton.SetActive(false);
         
-        SceneManager.LoadScene(1);
+        //SceneManager.LoadScene(1);
         
 
         Debug.Log("Hellllo");
