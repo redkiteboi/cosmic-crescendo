@@ -98,12 +98,13 @@ public class GameMaster : MonoBehaviour
         Vector3 pos1 = object1.transform.position;
         Vector3 pos2 = object2.transform.position;
         float distance = Vector3.Distance(pos1, pos2);
+        float ogDistance = distance;
 
         float massSum = object1.mass + object2.mass;
         float relDist = object2.mass / massSum;
         Vector3 mergePoint = Vector3.Lerp(pos1, pos2, relDist);
 
-        while (distance >= 1f)
+        while (distance > ogDistance / 8f)
         {
             object1.transform.position = Vector3.Lerp(pos1, mergePoint, 0.025f);
             object2.transform.position = Vector3.Lerp(pos2, mergePoint, 0.025f);
