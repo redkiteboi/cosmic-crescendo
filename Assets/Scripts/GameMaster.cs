@@ -136,7 +136,17 @@ public class GameMaster : MonoBehaviour
         Material mat;
         SpaceObjectType type;
 
-        if (object1.mass >= object2.mass)
+        if (object1.type == SpaceObjectType.BlackHole)
+        {
+            type = SpaceObjectType.BlackHole;
+            mat = object1.GetComponent<Renderer>().material;
+        }
+        else if (object2.type == SpaceObjectType.BlackHole)
+        {
+            type = SpaceObjectType.BlackHole;
+            mat = object2.GetComponent<Renderer>().material;
+        }
+        else if (object1.mass >= object2.mass)
         {
             type = object1.type;
             mat = object1.GetComponent<Renderer>().material;
