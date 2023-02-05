@@ -23,6 +23,7 @@ public class AudioManager : MonoBehaviour
     {
         if (instance != null)
         {
+            instance.FadeOut();
             Destroy(gameObject);
         }
         else
@@ -42,11 +43,20 @@ public class AudioManager : MonoBehaviour
         StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "mainmenu_vol", 5.0f, 1.0f));
     }
 
-    public void SetLayer(int layer)
+    public static void SetLayer(int layer)
+    {
+        if (instance != null) instance.SetLayerInternal(layer);
+    }
+
+    private void SetLayerInternal(int layer)
     {
         switch (layer)
         {
             case 0:
+                StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part5_vol", .5f, 0f));
+                StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part4_vol", .5f, 0f));
+                StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part3_vol", .5f, 0f));
+                StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part2_vol", .5f, 0f));
                 StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part1_vol", 5.0f, 1.0f));
                 break;
             case 1:

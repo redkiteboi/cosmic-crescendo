@@ -11,7 +11,6 @@ public class GameMaster : MonoBehaviour
     [SerializeField] public MainCam cam;
     [SerializeField] private SpaceObject defaultObj;
     [SerializeField] private SpaceObject defaultGalaxy;
-    [SerializeField] private AudioManager audioManager;
     [SerializeField] private VisualEffect poofEffect;
     [SerializeField] private int mergeCount = 0;
     [SerializeField] private bool isPaused = true;
@@ -37,7 +36,7 @@ public class GameMaster : MonoBehaviour
     {
         cam.goalPos = layerCamPos[0];
         StartCoroutine(IntroSequence());
-        audioManager.SetLayer(currentLayer);
+        AudioManager.SetLayer(currentLayer);
     }
 
     private IEnumerator IntroSequence()
@@ -124,7 +123,7 @@ public class GameMaster : MonoBehaviour
         {
             mergeCount = 0;
             AdjustCam(layerCamPos[++currentLayer]);
-            audioManager.SetLayer(currentLayer);
+            AudioManager.SetLayer(currentLayer);
             if (currentLayer >= 5) Debug.Log("You are Winner!");
         }
     }
