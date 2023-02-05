@@ -8,6 +8,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject startButton;
     [SerializeField] private GameObject quitButton;
     public static bool gameStarted = false;
+    [SerializeField] private Animator camAnim;
+    [SerializeField] private Animator holeAnim;
 
     public void StartGame()
     {
@@ -15,7 +17,9 @@ public class MainMenu : MonoBehaviour
         quitButton.SetActive(false);
         
         //SceneManager.LoadScene(1);
-        
+        camAnim.SetBool("gameStarted1", true);
+        holeAnim.SetBool("gameStarted", true);
+
 
         Debug.Log("Hellllo");
         gameStarted = true;

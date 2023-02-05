@@ -25,17 +25,9 @@ public class plantemagnet : MonoBehaviour
            RandomizeMaterial();
        }
 
-       Time.timeScale = 0;
     }
 
-    private void Update()
-    {
-        if (MainMenu.gameStarted)
-        {
-            Time.timeScale = 1;
-        }
-    }
-
+   
     // Update is called once per frame
     void FixedUpdate() 
     {
