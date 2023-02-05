@@ -6,6 +6,7 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
+    [SerializeField] private AudioSource mainmenu;
     [SerializeField] private AudioSource part1;
     [SerializeField] private AudioSource part2;
     [SerializeField] private AudioSource part3;
@@ -18,13 +19,13 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("TestAudio");
+        mainmenu.Play();
         part1.Play();
         part2.Play();
         part3.Play();
         part4.Play();
         part5.Play();
-        StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part1_vol", 5.0f, 1.0f));
+        StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "mainmenu_vol", 5.0f, 1.0f));
     }
 
     public void SetLayer(int layer)
@@ -48,7 +49,6 @@ public class AudioManager : MonoBehaviour
                 break;
             case 5:
                 endsequence.Play();
-                StartCoroutine(FadeMixerGroup.FadeReverb(audioMixer, "reverb", .5f, 1.0f));
                 StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part5_vol", .5f, 0f));
                 StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part4_vol", .5f, 0f));
                 StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part3_vol", .5f, 0f));
