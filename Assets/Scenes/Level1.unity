@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.000087514774, g: 0.00008814973, b: 0.00009617853,
+  m_IndirectSpecularColor: {r: 0.000087493485, g: 0.00008812846, b: 0.000096123375,
     a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -4758,12 +4758,12 @@ PrefabInstance:
     - target: {fileID: 4033336222014423642, guid: a1ee7a433f4296f4394bbac3053a1e0a,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 625.01385
+      value: 688.2377
       objectReference: {fileID: 0}
     - target: {fileID: 4033336222014423642, guid: a1ee7a433f4296f4394bbac3053a1e0a,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 625.01385
+      value: 688.2377
       objectReference: {fileID: 0}
     - target: {fileID: 4356292400272766376, guid: a1ee7a433f4296f4394bbac3053a1e0a,
         type: 3}
@@ -6072,32 +6072,32 @@ PrefabInstance:
     - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
         type: 3}
       propertyPath: layerCamPos.Array.data[4].x
-      value: -263.0246
+      value: -28985
       objectReference: {fileID: 0}
     - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
         type: 3}
       propertyPath: layerCamPos.Array.data[4].y
-      value: 99999
+      value: 99998.83
       objectReference: {fileID: 0}
     - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
         type: 3}
       propertyPath: layerCamPos.Array.data[4].z
-      value: -756.91895
+      value: -35862
       objectReference: {fileID: 0}
     - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
         type: 3}
       propertyPath: layerCamPos.Array.data[5].x
-      value: -263.0246
+      value: -82881
       objectReference: {fileID: 0}
     - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
         type: 3}
       propertyPath: layerCamPos.Array.data[5].y
-      value: 99999
+      value: 63570
       objectReference: {fileID: 0}
     - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
         type: 3}
       propertyPath: layerCamPos.Array.data[5].z
-      value: -756.91895
+      value: 79713
       objectReference: {fileID: 0}
     - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
         type: 3}
@@ -11695,12 +11695,12 @@ PrefabInstance:
     - target: {fileID: 4033336222014423642, guid: eeb633ae250871649a696732f8c66d8e,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 625.01385
+      value: 688.2377
       objectReference: {fileID: 0}
     - target: {fileID: 4033336222014423642, guid: eeb633ae250871649a696732f8c66d8e,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 625.01385
+      value: 688.2377
       objectReference: {fileID: 0}
     - target: {fileID: 4356292400272766376, guid: eeb633ae250871649a696732f8c66d8e,
         type: 3}
@@ -15073,12 +15073,12 @@ PrefabInstance:
     - target: {fileID: 4033336222014423642, guid: eeb633ae250871649a696732f8c66d8e,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 625.01385
+      value: 688.2377
       objectReference: {fileID: 0}
     - target: {fileID: 4033336222014423642, guid: eeb633ae250871649a696732f8c66d8e,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 625.01385
+      value: 688.2377
       objectReference: {fileID: 0}
     - target: {fileID: 4356292400272766376, guid: eeb633ae250871649a696732f8c66d8e,
         type: 3}
@@ -17400,37 +17400,37 @@ PrefabInstance:
     - target: {fileID: 5593820013520368296, guid: c324039f39e00ef42a71121d7ddb4367,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -263.0246
+      value: -28985
       objectReference: {fileID: 0}
     - target: {fileID: 5593820013520368296, guid: c324039f39e00ef42a71121d7ddb4367,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 99999
+      value: 99998.83
       objectReference: {fileID: 0}
     - target: {fileID: 5593820013520368296, guid: c324039f39e00ef42a71121d7ddb4367,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -756.91895
+      value: -35862
       objectReference: {fileID: 0}
     - target: {fileID: 5593820013520368296, guid: c324039f39e00ef42a71121d7ddb4367,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7000315
+      value: 0.79406285
       objectReference: {fileID: 0}
     - target: {fileID: 5593820013520368296, guid: c324039f39e00ef42a71121d7ddb4367,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.6944444
+      value: 0.50826293
       objectReference: {fileID: 0}
     - target: {fileID: 5593820013520368296, guid: c324039f39e00ef42a71121d7ddb4367,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.11816282
+      value: 0.28077468
       objectReference: {fileID: 0}
     - target: {fileID: 5593820013520368296, guid: c324039f39e00ef42a71121d7ddb4367,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.117219746
+      value: -0.17971796
       objectReference: {fileID: 0}
     - target: {fileID: 5593820013520368296, guid: c324039f39e00ef42a71121d7ddb4367,
         type: 3}
@@ -21002,12 +21002,12 @@ PrefabInstance:
     - target: {fileID: 4033336222014423642, guid: a558d81fa95809a41918e9253640400f,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 625.01385
+      value: 688.2377
       objectReference: {fileID: 0}
     - target: {fileID: 4033336222014423642, guid: a558d81fa95809a41918e9253640400f,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 625.01385
+      value: 688.2377
       objectReference: {fileID: 0}
     - target: {fileID: 4356292400272766376, guid: a558d81fa95809a41918e9253640400f,
         type: 3}
@@ -23282,12 +23282,12 @@ PrefabInstance:
     - target: {fileID: 4033336222014423642, guid: ac0bff3022affa94baaf9e7947eea4b3,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 625.01385
+      value: 688.2377
       objectReference: {fileID: 0}
     - target: {fileID: 4033336222014423642, guid: ac0bff3022affa94baaf9e7947eea4b3,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 625.01385
+      value: 688.2377
       objectReference: {fileID: 0}
     - target: {fileID: 4356292400272766376, guid: ac0bff3022affa94baaf9e7947eea4b3,
         type: 3}
@@ -24682,12 +24682,12 @@ PrefabInstance:
     - target: {fileID: 4033336222014423642, guid: ac0bff3022affa94baaf9e7947eea4b3,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 625.01385
+      value: 688.2377
       objectReference: {fileID: 0}
     - target: {fileID: 4033336222014423642, guid: ac0bff3022affa94baaf9e7947eea4b3,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 625.01385
+      value: 688.2377
       objectReference: {fileID: 0}
     - target: {fileID: 4356292400272766376, guid: ac0bff3022affa94baaf9e7947eea4b3,
         type: 3}
@@ -30171,12 +30171,12 @@ PrefabInstance:
     - target: {fileID: 4033336222014423642, guid: a1ee7a433f4296f4394bbac3053a1e0a,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 625.01385
+      value: 688.2377
       objectReference: {fileID: 0}
     - target: {fileID: 4033336222014423642, guid: a1ee7a433f4296f4394bbac3053a1e0a,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 625.01385
+      value: 688.2377
       objectReference: {fileID: 0}
     - target: {fileID: 4356292400272766376, guid: a1ee7a433f4296f4394bbac3053a1e0a,
         type: 3}
