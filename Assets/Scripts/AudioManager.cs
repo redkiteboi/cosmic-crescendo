@@ -6,6 +6,8 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
+    private static AudioManager instance;
+
     [SerializeField] private AudioSource mainmenu;
     [SerializeField] private AudioSource part1;
     [SerializeField] private AudioSource part2;
@@ -17,7 +19,19 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioMixer audioMixer;
 
-    void Start()
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+    private void Start()
     {
         mainmenu.Play();
         part1.Play();
@@ -49,15 +63,20 @@ public class AudioManager : MonoBehaviour
                 break;
             case 5:
                 endsequence.Play();
-                StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part5_vol", .5f, 0f));
-                StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part4_vol", .5f, 0f));
-                StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part3_vol", .5f, 0f));
-                StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part2_vol", .5f, 0f));
-                StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part1_vol", .5f, 0f));
+                FadeOut();
                 break;
             default:
                 Debug.LogError("Invalid layer number!");
                 break;
         }
+    }
+
+    private void FadeOut()
+    {
+        StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part5_vol", .5f, 0f));
+        StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part4_vol", .5f, 0f));
+        StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part3_vol", .5f, 0f));
+        StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part2_vol", .5f, 0f));
+        StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part1_vol", .5f, 0f));
     }
 }
