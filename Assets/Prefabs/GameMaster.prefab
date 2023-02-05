@@ -44,17 +44,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d88c5c31a313c4aaa9480c9b85e557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  il: 0
   cam: {fileID: 0}
   defaultObj: {fileID: 1655152955113421758, guid: 6a7a1a2e8f1251b4893012f888b44eeb,
     type: 3}
   defaultGalaxy: {fileID: 1655152955113421758, guid: ac0bff3022affa94baaf9e7947eea4b3,
     type: 3}
-  audioManager: {fileID: 0}
+  defaultBlackHole: {fileID: 1655152955113421758, guid: 87627cd31cfeea348abad2a6f670b06e,
+    type: 3}
   poofEffect: {fileID: 4037932696335243462, guid: 12d738aefb035ad4097e11823bd88d08,
     type: 3}
   mergeCount: 0
+  isPaused: 1
+  introTimer: 3
   currentLayer: 0
-  lineWidth: 0.06
   layerRequirements: 0000000000000000000000000000000000000000
   layerCamPos:
   - {x: 0, y: 0, z: 0}
