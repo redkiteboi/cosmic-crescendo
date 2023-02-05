@@ -11,6 +11,7 @@ public class GameMaster : MonoBehaviour
     [SerializeField] public MainCam cam;
     [SerializeField] private SpaceObject defaultObj;
     [SerializeField] private SpaceObject defaultGalaxy;
+    [SerializeField] private SpaceObject defaultBlackHole;
     [SerializeField] private VisualEffect poofEffect;
     [SerializeField] private int mergeCount = 0;
     [SerializeField] private bool isPaused = true;
@@ -164,6 +165,7 @@ public class GameMaster : MonoBehaviour
 
         SpaceObject newObject;
         if (type == SpaceObjectType.Galaxy) newObject = Instantiate(instance.defaultGalaxy, position, object1.transform.rotation);
+        else if (type == SpaceObjectType.BlackHole) newObject = Instantiate(instance.defaultBlackHole, position, object1.transform.rotation);
         else newObject = Instantiate(instance.defaultObj, position, object1.transform.rotation);
         newObject.type = type;
         newObject.mass = massSum;
