@@ -196,7 +196,7 @@ public class GameMaster : MonoBehaviour
         VisualEffect poof = Instantiate(poofEffect, Vector3.zero, transform.rotation);
         poof.SetFloat("Scaling", 1000000f);
         poof.Play();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.25f);
         SceneManager.LoadScene(0);
         MainMenu.gameStarted = false;
     }
