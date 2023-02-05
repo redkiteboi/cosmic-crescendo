@@ -16,15 +16,23 @@ public class SpaceObject : MonoBehaviour
 
     [SerializeField] private new LineRenderer renderer;
     private IEnumerator ringFadeAnim;
+    private TrailRenderer trail;
 
     private void Awake()
     {
         ringFadeAnim = AnimateFade(0f);
+        trail = GetComponentInChildren<TrailRenderer>();
     }
 
     private void Start()
     {
         OnValidate();
+        if (trail)
+        {
+            float width = Vector3.Distance(transform.position, Vector3.zero) * 0.06125f;
+            trail.startWidth = width;
+            trail.endWidth = 0f;
+        }
         if (isOriginal) RandomizeMaterial();
     }
 

@@ -188,6 +188,10 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: f9b4dd35a4b14b04b9d9f432699009cd
+    name: musicVol
+  - guid: 887d8eacf2e2f7640a2d693568dba386
+    name: sfxVol
   - guid: 0991ce7cd79a0cd4cb86f9ce0081cd79
     name: mainmenu_vol
   - guid: d7ed71b16d9202f40b1518b1c0b45d93
@@ -265,7 +269,7 @@ AudioMixerSnapshotController:
     48b057722f8c1864c8abfd85ebaa333a: 7.62
     b88a3a449f2827a45a5c492b52d05927: 0
     d05524a45c154cd438f173226d716dfa: -80
-    f9b4dd35a4b14b04b9d9f432699009cd: -9.833286
+    f9b4dd35a4b14b04b9d9f432699009cd: 0
     67037b45fa6133146ab7404ec7dc4ee7: -80
     083d68c66eaacb544959a73da0235aac: -6988
     2400b46805579f341b53197b654fa0bd: -80
