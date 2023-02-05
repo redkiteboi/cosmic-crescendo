@@ -13,7 +13,9 @@ public class MainMenu : MonoBehaviour
     {
         startButton.SetActive(false);
         quitButton.SetActive(false);
-        
+
+
+        AudioManager.PlayStartAudio();
         //SceneManager.LoadScene(1);
         
 
