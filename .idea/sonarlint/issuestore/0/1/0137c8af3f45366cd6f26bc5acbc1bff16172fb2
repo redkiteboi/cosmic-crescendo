@@ -1,6 +1,0 @@
-
-Mcsharpsquid:S3903")Move 'GameMaster' into a named namespace.(Ίÿ·8®Εονα0
-Ccsharpsquid:S2933"Make 'spaceObjects' 'readonly'.(“―»8Β™Ύφα0
-hcsharpsquid:S1104
-"DMake this field 'private' and encapsulate it in a 'public' property.(Φά…Ν8Ιϊφα0
-ycsharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(Ν—“Φ8Β™Ύφα0
