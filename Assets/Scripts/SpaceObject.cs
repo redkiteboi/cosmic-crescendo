@@ -121,9 +121,14 @@ public class SpaceObject : MonoBehaviour
                 Color.RGBToHSV(bass, out bassH, out bassS, out bassV);
                 Color.RGBToHSV(cell, out cellH, out cellS, out cellV);
 
-                float c = Random.Range(0f, 0.666f);
+                float c;
+                if (Random.Range(0f, 1f) >= 0.5f) c = Random.Range(0f, 0.2f);
+                else c = Random.Range(0.5f, 0.666f);
                 bassH = c;
                 cellH = c;
+
+                bassS = Random.Range(0.75f, 1f);
+                cellS = Random.Range(0.75f, 1f);
 
                 bass = Color.HSVToRGB(bassH, bassS, bassV);
                 cell = Color.HSVToRGB(cellH, cellS, cellV);
