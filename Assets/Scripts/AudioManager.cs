@@ -91,4 +91,9 @@ public class AudioManager : MonoBehaviour
         StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part2_vol", .5f, 0f));
         StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part1_vol", .5f, 0f));
     }
+
+    public static void PlayStartAudio()
+    {
+        if (instance != null) instance.start.Play();
+    }
 }

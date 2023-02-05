@@ -15,7 +15,9 @@ public class MainMenu : MonoBehaviour
     {
         startButton.SetActive(false);
         quitButton.SetActive(false);
-        
+
+
+        AudioManager.PlayStartAudio();
         //SceneManager.LoadScene(1);
         camAnim.SetBool("gameStarted1", true);
         holeAnim.SetBool("gameStarted", true);
