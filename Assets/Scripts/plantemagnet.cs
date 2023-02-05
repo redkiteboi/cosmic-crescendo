@@ -24,11 +24,6 @@ public class plantemagnet : MonoBehaviour
        {
            RandomizeMaterial();
        }
-
-       col = GetComponent<Collider>();
-       /*
-       go = GetComponent<GameObject>();
-   */
     }
 
     // Update is called once per frame
@@ -37,36 +32,16 @@ public class plantemagnet : MonoBehaviour
         Vector3 pos = transform.position;
 
         Vector3 target = new Vector3(-5.7f,0.0f,-57.3f);
-        /*
-        Vector3 actualendpos = new Vector3(15.72507f,20.7f,-62.50652f);
-        */
-        
+      
         transform.position = Vector3.MoveTowards(pos, target, velocity + besch);
         besch = +besch+0.0001f;
-        Vector3 newPos = transform.position;
-
-        /*Collider col = GetComponent<Collider>();
-        if ()
-        {
-            Destroy(this);
-        }*/
-        /*
-        Debug.Log("I was here2");
-        */
-
     }
     
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("I was here");
-
         if(collision.gameObject.name.Equals("blackhole"))
         gameObject.SetActive(false);
-        /*
-        Destroy(this);
-        */
-
     }
 
     public void RandomizeMaterial()
