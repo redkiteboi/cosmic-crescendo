@@ -62,7 +62,7 @@ public class SpaceObject : MonoBehaviour
 
     public void Select()
     {
-        DrawCircle(100, mass);
+        DrawCircle(100, mergeRange);
         StopCoroutine(ringFadeAnim);
         StartCoroutine(AnimateFade(1));
     }
