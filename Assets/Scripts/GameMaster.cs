@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.VFX;
 
 public class GameMaster : MonoBehaviour
@@ -186,6 +187,17 @@ public class GameMaster : MonoBehaviour
     private void WinGame()
     {
         Debug.Log("You are Winner!");
+        StartCoroutine(WinAnim());
+    }
+
+    private IEnumerator WinAnim()
+    {
+        yield return new WaitForSeconds(2f);
+        VisualEffect poof = Instantiate(poofEffect, Vector3.zero, transform.rotation);
+        poof.SetFloat("Scaling", 1000000f);
+        poof.Play();
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(0);
     }
 
 }
