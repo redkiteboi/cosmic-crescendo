@@ -25,24 +25,27 @@ public class AudioManager : MonoBehaviour
     {
         if (instance != null)
         {
-            instance.FadeOut();
+            instance.FadeOutIntern();
             Destroy(gameObject);
         }
         else
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            
+            mainmenu.Play();
+            part1.Play();
+            part2.Play();
+            part3.Play();
+            part4.Play();
+            part5.Play();
+            //StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "mainmenu_vol", 5.0f, 1.0f));
         }
     }
+    
     private void Start()
     {
-        mainmenu.Play();
-        part1.Play();
-        part2.Play();
-        part3.Play();
-        part4.Play();
-        part5.Play();
-        StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "mainmenu_vol", 5.0f, 1.0f));
+        
     }
 
     public static void SetLayer(int layer)
@@ -83,7 +86,18 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void FadeOut()
+    public static void FadeOut()
+    {
+        if (instance == null)
+            return;
+        instance.StartCoroutine(FadeMixerGroup.StartFade(instance.audioMixer, "part5_vol", .5f, 0f));
+        instance.StartCoroutine(FadeMixerGroup.StartFade(instance.audioMixer, "part4_vol", .5f, 0f));
+        instance.StartCoroutine(FadeMixerGroup.StartFade(instance.audioMixer, "part3_vol", .5f, 0f));
+        instance.StartCoroutine(FadeMixerGroup.StartFade(instance.audioMixer, "part2_vol", .5f, 0f));
+        instance.StartCoroutine(FadeMixerGroup.StartFade(instance.audioMixer, "part1_vol", .5f, 0f));
+    }
+
+    private void FadeOutIntern()
     {
         StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part5_vol", .5f, 0f));
         StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "part4_vol", .5f, 0f));
