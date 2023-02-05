@@ -95,11 +95,11 @@ public class SpaceObject : MonoBehaviour
             case SpaceObjectType.Asteroid:
                 break;
             case SpaceObjectType.RockPlanet:
-                m.SetColor("_Color", Random.ColorHSV());
+                m.SetColor("_Color", Random.ColorHSV(0, 1, 0, 1, 0.25f, 1));
                 m.SetColor("_AtmoColor", Random.ColorHSV());
                 break;
             case SpaceObjectType.GasGiant:
-                m.SetColor("_BaseColor", Random.ColorHSV());
+                m.SetColor("_BaseColor", Random.ColorHSV(0, 1, 0, 1, 0.25f, 1));
                 m.SetColor("_AtmoColor", Random.ColorHSV());
                 break;
             case SpaceObjectType.Star:
@@ -112,8 +112,9 @@ public class SpaceObject : MonoBehaviour
                 Color.RGBToHSV(bass, out bassH, out bassS, out bassV);
                 Color.RGBToHSV(cell, out cellH, out cellS, out cellV);
 
-                bassH = Random.Range(0f, 1f);
-                cellH = Random.Range(0f, 1f);
+                float c = Random.Range(0f, 0.666f);
+                bassH = c;
+                cellH = c;
 
                 bass = Color.HSVToRGB(bassH, bassS, bassV);
                 cell = Color.HSVToRGB(cellH, cellS, cellV);
