@@ -7,6 +7,7 @@ public class GameMaster : MonoBehaviour
 {
     private static GameMaster instance;
 
+    [SerializeField] private int il;
     [SerializeField] public MainCam cam;
     [SerializeField] private SpaceObject defaultObj;
     [SerializeField] private SpaceObject defaultGalaxy;
@@ -122,6 +123,7 @@ public class GameMaster : MonoBehaviour
             mergeCount = 0;
             AdjustCam(layerCamPos[++currentLayer]);
             audioManager.SetLayer(currentLayer);
+            if (currentLayer >= 5) Debug.Log("You are Winner!");
         }
     }
 
