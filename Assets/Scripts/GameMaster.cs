@@ -13,7 +13,7 @@ public class GameMaster : MonoBehaviour
     [SerializeField] private SpaceObject defaultObj;
     [SerializeField] private SpaceObject defaultGalaxy;
     [SerializeField] private SpaceObject defaultBlackHole;
-    [SerializeField] private VisualEffect poofEffect;
+    [SerializeField] private ParticleSystem poofEffect;
     [SerializeField] private int mergeCount = 0;
     [SerializeField] private bool isPaused = true;
     [SerializeField] private float introTimer = 3f;
@@ -174,9 +174,12 @@ public class GameMaster : MonoBehaviour
         newObject.isOriginal = false;
         newObject.GetComponent<Renderer>().material = mat;
 
+        Instantiate(poofEffect.gameObject, newObject.transform).transform.localScale *= volumeSum * 0.75f;
+        /*
         VisualEffect mergePoof = Instantiate(poofEffect, newObject.transform);
         mergePoof.SetFloat("Scaling", volumeSum * 0.75f);
         mergePoof.Play();
+        */
     }
 
     private void AdjustCam(Vector3 pos)
@@ -193,9 +196,11 @@ public class GameMaster : MonoBehaviour
     private IEnumerator WinAnim()
     {
         yield return new WaitForSeconds(2f);
-        VisualEffect poof = Instantiate(poofEffect, Vector3.zero, transform.rotation);
+        Instantiate(poofEffect.gameObject, Vector3.zero, transform.rotation).transform.localScale *= 1000000f;
+        /*VisualEffect poof = Instantiate(poofEffect, Vector3.zero, transform.rotation);
         poof.SetFloat("Scaling", 1000000f);
         poof.Play();
+        */
         yield return new WaitForSeconds(0.25f);
         SceneManager.LoadScene(0);
         MainMenu.gameStarted = false;

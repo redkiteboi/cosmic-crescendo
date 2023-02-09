@@ -9,7 +9,7 @@ public class SpaceObject : MonoBehaviour
     [SerializeField] public float volume = 1f;
     [SerializeField] public float mass = 1f;
     [SerializeField] private float multiplier = 1f;
-    [SerializeField] private VisualEffect poof;
+    [SerializeField] private ParticleSystem poof;
     public float mergeRange { get; private set; }
     public bool isOriginal = true;
     public bool isMerging = false;
@@ -18,10 +18,27 @@ public class SpaceObject : MonoBehaviour
     private IEnumerator ringFadeAnim;
     private TrailRenderer trail;
 
+    #if UNITY_WEBGL
+    [SerializeField] private Mesh altMesh;
+#endif
+
     private void Awake()
     {
         ringFadeAnim = AnimateFade(0f);
         trail = GetComponentInChildren<TrailRenderer>();
+
+        #if UNITY_WEBGL
+        //Switch Main Mesh to UV_Sphere
+        MeshFilter filter = GetComponent<MeshFilter>();
+        if (filter != null && type != SpaceObjectType.Asteroid && altMesh != null) filter.sharedMesh = altMesh;
+        
+        //Switch Sub Meshes to UV_Sphere
+        if (type == SpaceObjectType.BlackHole)
+        {
+            MeshFilter[] subFilters = GetComponentsInChildren<MeshFilter>();
+            if (subFilters[1] != null && subFilters[1].sharedMesh.name == "Sphere" && altMesh != null) subFilters[1].sharedMesh = altMesh;
+        }
+        #endif
     }
 
     private void Start()
@@ -150,9 +167,12 @@ public class SpaceObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Instantiate(poof.gameObject, collision.GetContact(0).point, collision.transform.rotation).transform.localScale *= volume * 0.4f;
+        /*
         VisualEffect colPoof = Instantiate(poof, collision.GetContact(0).point, collision.transform.rotation);
         colPoof.SetFloat("Scaling", volume * 0.6f);
         colPoof.Play();
+        */
     }
 
     private void OnDestroy()

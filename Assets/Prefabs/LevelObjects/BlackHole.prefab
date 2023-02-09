@@ -268,7 +268,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.44144827
+        value: 90.920616
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -277,7 +277,7 @@ LineRenderer:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 0.44144827
+        value: 90.920616
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -340,10 +340,12 @@ MonoBehaviour:
   volume: 1
   mass: 1
   multiplier: 1
-  poof: {fileID: 4037932696335243462, guid: 12d738aefb035ad4097e11823bd88d08, type: 3}
+  poof: {fileID: 6764467736551247139, guid: 12d738aefb035ad4097e11823bd88d08, type: 3}
   isOriginal: 1
   isMerging: 0
   renderer: {fileID: 4033336222014423642}
+  altMesh: {fileID: -8497819287141038726, guid: 7c4d1850750871545b5087391b995e0b,
+    type: 3}
 --- !u!1 &6000513038817558077
 GameObject:
   m_ObjectHideFlags: 0

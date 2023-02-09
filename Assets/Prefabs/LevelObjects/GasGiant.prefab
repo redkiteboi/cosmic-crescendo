@@ -339,10 +339,12 @@ MonoBehaviour:
   volume: 1
   mass: 1
   multiplier: 1
-  poof: {fileID: 4037932696335243462, guid: 12d738aefb035ad4097e11823bd88d08, type: 3}
+  poof: {fileID: 6764467736551247139, guid: 12d738aefb035ad4097e11823bd88d08, type: 3}
   isOriginal: 1
   isMerging: 0
   renderer: {fileID: 4033336222014423642}
+  altMesh: {fileID: -8497819287141038726, guid: 7c4d1850750871545b5087391b995e0b,
+    type: 3}
 --- !u!1001 &6262053959115128845
 PrefabInstance:
   m_ObjectHideFlags: 0
