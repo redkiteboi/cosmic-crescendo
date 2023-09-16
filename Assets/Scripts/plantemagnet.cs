@@ -20,7 +20,7 @@ public class plantemagnet : MonoBehaviour
     void Start()
     {
        begpos = transform.position;
-       if (GetComponent<Renderer>() != null && GetComponent<Shader>().GetType().Namespace != "Universe" )
+       if (GetComponent<Renderer>() != null)
        {
            RandomizeMaterial();
        }
