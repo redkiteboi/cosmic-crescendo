@@ -17,15 +17,12 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        startButton.SetActive(false);
-        quitButton.SetActive(false);
+        gameObject.SetActive(false);
 
         AudioManager.PlayStartAudio();
 
         //SceneManager.LoadScene(1);
         
-
-        Debug.Log("Hellllo");
         gameStarted = true;
     }
 
