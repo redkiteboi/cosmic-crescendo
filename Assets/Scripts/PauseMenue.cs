@@ -25,15 +25,15 @@ public class PauseMenue : MonoBehaviour
 
     public void LoadCurrentScene()
     {
+        PlayerPrefs.SetInt("SkipIntro", 1);
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }
 
     public void LoadMainMenu()
     {
-        
         SceneManager.LoadScene(0);
-        
+        PlayerPrefs.SetInt("SkipIntro", 0);
         MainMenu.gameStarted = false;
     }
 

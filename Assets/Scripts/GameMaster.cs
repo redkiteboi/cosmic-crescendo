@@ -37,6 +37,8 @@ public class GameMaster : MonoBehaviour
     private void Start()
     {
         cam.goalPos = layerCamPos[0];
+        if (PlayerPrefs.GetInt("SkipIntro") == 1)
+            cam.transform.position = Vector3.Lerp(cam.transform.position, layerCamPos[0], 0.999f);
         StartCoroutine(IntroSequence());
         AudioManager.SetLayer(currentLayer);
     }

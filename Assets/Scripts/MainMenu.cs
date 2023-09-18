@@ -24,6 +24,8 @@ public class MainMenu : MonoBehaviour
         //SceneManager.LoadScene(1);
         
         gameStarted = true;
+
+        PlayerPrefs.SetInt("SkipIntro", 0);
     }
 
     public void QuitGame()
