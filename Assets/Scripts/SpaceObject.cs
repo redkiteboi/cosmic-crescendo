@@ -13,6 +13,7 @@ public class SpaceObject : MonoBehaviour
     public float mergeRange { get; private set; }
     public bool isOriginal = true;
     public bool isMerging = false;
+    public int layer = 0;
 
     [SerializeField] private new LineRenderer renderer;
     private IEnumerator ringFadeAnim;
@@ -44,6 +45,10 @@ public class SpaceObject : MonoBehaviour
     private void Start()
     {
         OnValidate();
+
+        SpaceLayer l = transform.parent?.GetComponent<SpaceLayer>();
+        if (l != null) layer = l.Layer;
+
         if (trail)
         {
             float width = Vector3.Distance(transform.position, Vector3.zero) * 0.06125f;

@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
             case InputActionPhase.Performed:
                 selectedObjects[0] = s;
                 if (s == null) return;
+                if (s.layer > GameMaster.instance.CurrentLayer) return;
                 s.Select();
                 break;
             case InputActionPhase.Canceled:

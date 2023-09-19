@@ -6,7 +6,7 @@ using UnityEngine.VFX;
 
 public class GameMaster : MonoBehaviour
 {
-    private static GameMaster instance;
+    public static GameMaster instance { get; private set; }
 
     [SerializeField] private int il;
     [SerializeField] public MainCam cam;
@@ -15,11 +15,15 @@ public class GameMaster : MonoBehaviour
     [SerializeField] private SpaceObject defaultBlackHole;
     [SerializeField] private ParticleSystem poofEffect;
     [SerializeField] private int mergeCount = 0;
-    [SerializeField] private bool isPaused = true;
-    [SerializeField] private float introTimer = 3f;
+    [SerializeField] private bool isPaused = false;
 
     private ArrayList spaceObjects = new ArrayList();
 
+    public int CurrentLayer
+    {
+        get => currentLayer;
+        private set => currentLayer = value;
+    }
     [SerializeField] private int currentLayer = 0;
     [SerializeField] private int[] layerRequirements = new int[5];
     [SerializeField] private Vector3[] layerCamPos = new Vector3[6];
@@ -39,14 +43,7 @@ public class GameMaster : MonoBehaviour
         cam.goalPos = layerCamPos[0];
         if (PlayerPrefs.GetInt("SkipIntro") == 1)
             cam.transform.position = Vector3.Lerp(cam.transform.position, layerCamPos[0], 0.999f);
-        StartCoroutine(IntroSequence());
         AudioManager.SetLayer(currentLayer);
-    }
-
-    private IEnumerator IntroSequence()
-    {
-        yield return new WaitForSeconds(introTimer);
-        isPaused = false;
     }
 
     public static void SetPaused(bool pause)
@@ -83,6 +80,8 @@ public class GameMaster : MonoBehaviour
         if (instance.isPaused) return false;
 
         if (object1.isMerging || object2.isMerging) return false;
+
+        if (object1.layer > instance.currentLayer || object2.layer > instance.currentLayer) return false;
 
         if (object1.GetComponentInChildren<Orbit>() != null || object2.GetComponentInChildren<Orbit>() != null) return false;
 

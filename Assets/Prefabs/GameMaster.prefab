@@ -55,8 +55,7 @@ MonoBehaviour:
   poofEffect: {fileID: 6764467736551247139, guid: 12d738aefb035ad4097e11823bd88d08,
     type: 3}
   mergeCount: 0
-  isPaused: 1
-  introTimer: 3
+  isPaused: 0
   currentLayer: 0
   layerRequirements: 0000000000000000000000000000000000000000
   layerCamPos:

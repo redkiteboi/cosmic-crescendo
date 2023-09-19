@@ -133,8 +133,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6812984}
+  - component: {fileID: 6812985}
   m_Layer: 0
-  m_Name: Layer 4
+  m_Name: Layer 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,6 +159,19 @@ Transform:
   m_Father: {fileID: 630771101}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6812985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6812983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1dec483831671740a5164784c2e9389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer: 3
 --- !u!1001 &61017139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6006,6 +6020,11 @@ PrefabInstance:
       objectReference: {fileID: 977910400}
     - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
         type: 3}
+      propertyPath: introTimer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820764608728919158, guid: 4484b776c4d605547abc637636d92114,
+        type: 3}
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 0}
@@ -7245,8 +7264,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 464433447}
+  - component: {fileID: 464433448}
   m_Layer: 0
-  m_Name: Layer 5
+  m_Name: Layer 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7270,6 +7290,19 @@ Transform:
   m_Father: {fileID: 630771101}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &464433448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464433446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1dec483831671740a5164784c2e9389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer: 4
 --- !u!1001 &473246947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19677,8 +19710,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1066728111}
+  - component: {fileID: 1066728112}
   m_Layer: 0
-  m_Name: Layer 3
+  m_Name: Layer 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19705,6 +19739,19 @@ Transform:
   m_Father: {fileID: 630771101}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1066728112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066728110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1dec483831671740a5164784c2e9389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer: 2
 --- !u!114 &1070139995 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8432147055298263880, guid: b1dd3fed9ce1d354696048c211a0b52b,
@@ -26034,8 +26081,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1792901560}
+  - component: {fileID: 1792901561}
   m_Layer: 0
-  m_Name: Layer 2
+  m_Name: Layer 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26060,6 +26108,19 @@ Transform:
   m_Father: {fileID: 630771101}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1792901561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792901559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1dec483831671740a5164784c2e9389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer: 1
 --- !u!4 &1879265389 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4110848075915328392, guid: 11b43f1508059c64cbea908bb629dae7,
@@ -32808,8 +32869,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2103949827}
+  - component: {fileID: 2103949828}
   m_Layer: 0
-  m_Name: Layer 1
+  m_Name: Layer 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32836,6 +32898,19 @@ Transform:
   m_Father: {fileID: 630771101}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2103949828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103949826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1dec483831671740a5164784c2e9389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer: 0
 --- !u!1001 &2114237362
 PrefabInstance:
   m_ObjectHideFlags: 0
