@@ -13,7 +13,9 @@ public class GameMaster : MonoBehaviour
     [SerializeField] private SpaceObject defaultObj;
     [SerializeField] private SpaceObject defaultGalaxy;
     [SerializeField] private SpaceObject defaultBlackHole;
+    [SerializeField] private Material asteroidMat;
     [SerializeField] private ParticleSystem poofEffect;
+    [SerializeField] private ParticleSystem winEffect;
     [SerializeField] private int mergeCount = 0;
     [SerializeField] private bool isPaused = false;
 
@@ -139,7 +141,12 @@ public class GameMaster : MonoBehaviour
         Material mat;
         SpaceObjectType type;
 
-        if (object1.type == SpaceObjectType.BlackHole)
+        if (object1.type == SpaceObjectType.Asteroid && object2.type == SpaceObjectType.Asteroid)
+        {
+            type = SpaceObjectType.RockPlanet;
+            mat = asteroidMat;
+        }
+        else if (object1.type == SpaceObjectType.BlackHole)
         {
             type = SpaceObjectType.BlackHole;
             mat = object1.GetComponent<Renderer>().material;
@@ -190,19 +197,15 @@ public class GameMaster : MonoBehaviour
 
     private void WinGame()
     {
-        Debug.Log("You are Winner!");
         StartCoroutine(WinAnim());
     }
 
     private IEnumerator WinAnim()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
+        winEffect.Play();
         Instantiate(poofEffect.gameObject, Vector3.zero, transform.rotation).transform.localScale *= 1000000f;
-        /*VisualEffect poof = Instantiate(poofEffect, Vector3.zero, transform.rotation);
-        poof.SetFloat("Scaling", 1000000f);
-        poof.Play();
-        */
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(0);
         MainMenu.gameStarted = false;
     }

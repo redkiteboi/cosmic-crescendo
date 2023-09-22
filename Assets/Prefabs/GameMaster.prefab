@@ -52,7 +52,10 @@ MonoBehaviour:
     type: 3}
   defaultBlackHole: {fileID: 1655152955113421758, guid: 87627cd31cfeea348abad2a6f670b06e,
     type: 3}
+  asteroidMat: {fileID: 2100000, guid: fae37f408b9647a4f94ffaec74126fad, type: 2}
   poofEffect: {fileID: 6764467736551247139, guid: 12d738aefb035ad4097e11823bd88d08,
+    type: 3}
+  winEffect: {fileID: 4021905970191357129, guid: 88705f2c3f2d8c7428317587ea36e9f9,
     type: 3}
   mergeCount: 0
   isPaused: 0

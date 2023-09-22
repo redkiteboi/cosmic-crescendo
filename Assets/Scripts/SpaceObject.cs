@@ -172,7 +172,10 @@ public class SpaceObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Instantiate(poof.gameObject, collision.GetContact(0).point, collision.transform.rotation).transform.localScale *= volume * 0.4f;
+        SpaceObject other = collision.gameObject.GetComponent<SpaceObject>();
+        if (other != null && other.volume > volume)
+            Instantiate(poof.gameObject, collision.GetContact(0).point, collision.transform.rotation).transform.localScale *= volume;
+
         /*
         VisualEffect colPoof = Instantiate(poof, collision.GetContact(0).point, collision.transform.rotation);
         colPoof.SetFloat("Scaling", volume * 0.6f);
