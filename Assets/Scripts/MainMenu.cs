@@ -10,11 +10,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject quitButton;
     public static bool gameStarted = false;
 
-    private void Start()
-    {
-        
-    }
-
     public void StartGame()
     {
         gameObject.SetActive(false);
@@ -34,5 +29,10 @@ public class MainMenu : MonoBehaviour
             UnityEditor.EditorApplication.isPlaying = false;
         #endif
             Application.Quit();
+    }
+
+    public void Credits()
+    {
+        Application.OpenURL("https://redkitedev.itch.io/cosmic-crescendo");
     }
 }
