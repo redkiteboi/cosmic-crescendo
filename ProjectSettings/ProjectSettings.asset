@@ -134,7 +134,7 @@ PlayerSettings:
     16:10: 0
     16:9: 1
     Others: 0
-  bundleVersion: 0.1.0
+  bundleVersion: 0.1.1
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -156,7 +156,7 @@ PlayerSettings:
   androidMaxAspectRatio: 16.9
   applicationIdentifier:
     Android: com.TeamBigChilling.CosmicCrescendo
-    Standalone: com.UnityTechnologies.com.unity.template-starter-kit
+    Standalone: com.TeamBigChilling.Cosmic-Crescendo
   buildNumber:
     Standalone: 0
     iPhone: 0
